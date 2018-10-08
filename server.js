@@ -4,11 +4,12 @@ const express =require("express");
 //pull in package for creating MongoDB models
 const mongoose = require("mongoose");
 
-//pill in the index file and all route files within to separate routes from the server file fro code cleanliness
+//pull in the index file and all route files within to separate routes from the server file fro code cleanliness
 const routes = require("./routes");
 
 //Initialize an instance of the express app
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 //Set up middleware for express
 app.use(express.urlencoded({ extended: true }));
@@ -20,9 +21,11 @@ if (process.env.NODE_ENV === "production") {
 //set up routes in the express instance
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/real-estate-investment");
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/real-estate-investment"
+    );
 
 //Start the Server
 app.listen(PORT, function() {
-    console.log(`API server listeninig on PORT ${PORT}`);
+    console.log(`API server listening on PORT ${PORT}`);
 });
