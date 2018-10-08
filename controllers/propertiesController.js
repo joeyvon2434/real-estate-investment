@@ -12,7 +12,9 @@ module.exports = {
 
     //route to get a single property
     findOne: function (req, res) {
-
+        db.Property.findById(req.params.id)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
 
     //route to get only sold properties
@@ -36,11 +38,14 @@ module.exports = {
 
     //route to update a property, accessible only if logged in
     updateProperty: function (req, res) {
-
+        db.Property
+        .findOneAndUpdate({_id: req.params.id}, req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
 
     //route to update a property, accessible only if logged in
     deleteProperty: function (req, res) {
-
+        
     }
 };//end module exports
