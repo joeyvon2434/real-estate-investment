@@ -12,19 +12,26 @@ module.exports = {
 
     //route to get a single property
     findOne: function (req, res) {
-        db.Property.findById(req.params.id)
+        db.Property
+        .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
 
     //route to get only sold properties
     findSold: function (req, res) {
-
+        db.Property
+        .find({propertySold: true})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
 
     //route to get only current properties
     findCurrent: function (req, res) {
-
+        db.Property
+        .find({propertySold: false})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     },
 
     //route to create a new property, accessible only if logged in
