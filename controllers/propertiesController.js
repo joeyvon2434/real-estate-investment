@@ -53,6 +53,10 @@ module.exports = {
 
     //route to update a property, accessible only if logged in
     deleteProperty: function (req, res) {
-        
+        db.Property
+        .findById({_id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     }
 };//end module exports
