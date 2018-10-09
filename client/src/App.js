@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Team from "./pages/Team";
+import Strategy from "./pages/Strategy";
+import Properties from "./pages/Properties";
+import Contact from "./pages/Contact";
+import SignIn from "./pages/SignIn";
+import AdminPage from "./pages/AdminPage";
+import NoMatch from "./pages/NoMatch";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/team" component={Team} />
+        <Route exact path="/strategy" component={Strategy} />
+        <Route exact path="/properties" component={Properties} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/admin" component={AdminPage} />
+        <Route component={NoMatch} />
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;
