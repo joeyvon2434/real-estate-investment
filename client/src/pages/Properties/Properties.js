@@ -1,26 +1,49 @@
 import React from "react";
 import "./Properties.css";
 import PropertyCard from "../../components/PropertyCard";
+import API from "../../utils/API";
 
 class Properties extends React.Component {
     
+    state = {
+        resultsArray: []
+    }
+
+    componentDidMount() {
+        this.getAllProperties();
+    }
+
+    getAllProperties = () => {
+        API.getAllProperties()
+        .then(res => {
+            console.log(res.data);
+            this.setState({
+                resultsArray: res.data
+            })
+        })
+        .catch(err => console.log(err));
+    }
+
     render() {
         return(
             <div className="wrapper">
-                Properties Page
+                <h2>Properties Page</h2>
+                {this.state.resultsArray.map( property => (
                 <PropertyCard 
                     imageLink={"https://via.placeholder.com/300/09f/fff.png"} 
-                    propertyName={"Placeholder Property"}
-                    summary={"A multi family complex with 4 identical units with 3 bedrooms and 2 baths."}
-                    propertyType={"Multi-family"}
-                    yearBuilt={1998}
-                    strategy={"Flip / Renovation"}
-                    location={"Houston, TX"}
-                    propertySold={true}
-                    returnOnEquity={3.9}
-                    internalRateOfReturn={4.7}
-                    disposition={"December, 2017"}
+                    key={property._id}
+                    propertyName={property.propertyName}
+                    summary={property.summary}
+                    propertyType={property.propertyType}
+                    yearBuilt={property.yearBuilt}
+                    strategy={property.strategy}
+                    location={property.location}
+                    propertySold={property.propertySold}
+                    returnOnEquity={property.returnOnEquity}
+                    internalRateOfReturn={property.internalRateOfReturn}
+                    disposition={property.disposition}
                 />
+                ))}
             </div>
         )
     }
