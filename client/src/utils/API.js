@@ -17,8 +17,10 @@ export default {
     },
 
     updateProperty: (property) => {
-        console.log("Property");
-        console.log(property);
         return axios.put("/api/properties/property/" + property._id, property);
+    },
+
+    removeProperty: (id) => {
+        return axios.delete("/api/properties/property/" + id);
     }
 };

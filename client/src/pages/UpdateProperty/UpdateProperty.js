@@ -91,6 +91,13 @@ class UpdateProperty extends React.Component {
             .catch(err => console.log(err));
     }
 
+    //function to delete a property
+    deleteProperty = () => {
+        const id =this.state.currentProperty._id;
+        console.log(id);
+        API.removeProperty(id)
+    }
+
     render() {
         return (
             <div className="wrapper">
@@ -119,7 +126,13 @@ class UpdateProperty extends React.Component {
                     handleInputChange={this.handleInputChange}
                     buttonLabel={"Update Property"}
                 />
-                <button className="btn btn-danger delete-button">Delete Property</button>
+                <button
+                    value={this.state.currentProperty._id}
+                    className="btn btn-danger delete-button"
+                    onClick={this.deleteProperty}
+                    >
+                    Delete Property: {this.state.currentProperty.propertyName}
+                </button>
 
             </div>
         )
