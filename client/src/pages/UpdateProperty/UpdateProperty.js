@@ -82,6 +82,7 @@ class UpdateProperty extends React.Component {
                 });
                 const select = document.getElementById("propertySelector");
                 select.innerHTML = "";
+                alert("Property Successfully Updated!")
             })
             .then(() => {
                 this.getAllProperties();
