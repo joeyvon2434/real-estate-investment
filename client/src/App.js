@@ -11,10 +11,12 @@ import AdminPage from "./pages/AdminPage";
 import MakeNewProperty from "./pages/MakeNewProperty";
 import UpdateProperty from "./pages/UpdateProperty";
 import NoMatch from "./pages/NoMatch";
+import NavTabs from "./pages/NavTabs";
 
 const App = () => (
   <Router>
     <div>
+      <NavTabs />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/team" component={Team} />
