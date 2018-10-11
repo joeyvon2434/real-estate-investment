@@ -9,6 +9,10 @@ export default {
     },
 
     createNewProperty: (propertyData) => {
-        axios.post("/api/properties/create", propertyData);
+        return axios.post("/api/properties/create", propertyData);
+    },
+
+    findOne: (property) => {
+        return axios.get("/api/properties/property/" + property.id);
     }
 };
