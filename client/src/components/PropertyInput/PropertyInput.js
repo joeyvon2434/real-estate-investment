@@ -6,7 +6,7 @@ class PropertyInput extends React.Component {
         return(
             <div>
                 <h2>Admin Page</h2>
-                <form>
+                <form id="property-form">
                     <div className="form-group">
                         <label>Property Name (* required *)</label>
                         <input type="text" className="form-control" name="propertyName" placeholder={this.props.propertyName} onChange={this.props.handleInputChange} />

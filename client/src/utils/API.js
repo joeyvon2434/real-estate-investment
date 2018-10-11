@@ -14,5 +14,11 @@ export default {
 
     findOne: (property) => {
         return axios.get("/api/properties/property/" + property.id);
+    },
+
+    updateProperty: (property) => {
+        console.log("Property");
+        console.log(property);
+        return axios.put("/api/properties/property/" + property._id, property);
     }
 };

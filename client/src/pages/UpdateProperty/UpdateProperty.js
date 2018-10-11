@@ -12,7 +12,7 @@ class UpdateProperty extends React.Component {
         currentProperty: {}
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getAllProperties();
     }
 
@@ -28,43 +28,66 @@ class UpdateProperty extends React.Component {
     //Function to get properties
     getAllProperties = () => {
         API.getAllProperties()
-        .then(res => {
-            this.setState({
-                resultsArray: res.data
-            });
-        }).then(()=> {
-            this.populateSelector(this.state.resultsArray);
-        })
-        .catch(err => console.log(err));
+            .then(res => {
+                this.setState({
+                    resultsArray: res.data
+                });
+            }).then(() => {
+                this.populateSelector(this.state.resultsArray);
+            })
+            .catch(err => console.log(err));
     }
 
-  
-    //take in input changes
+
+    //take in input changes and updates the current property state
     handleInputChange = (event) => {
         event.preventDefault();
-        const {name, value} = event.target;
+        const { name, value } = event.target;
+        const updatedProperty = Object.assign({}, this.state.currentProperty);
+        console.log("Updated Property");
+        console.log(updatedProperty);
+
+        updatedProperty[name] = value;
+
         this.setState({
-            [name]: value
+            currentProperty: updatedProperty
         });
     }
 
     //handles form updates and autopopulate when a property is selected
     handlePropertyChange = (event) => {
         event.preventDefault();
-        const {value} = event.target;
+        const { value } = event.target;
         const propertyId = {
             id: value
-        }
-        //wWHY ISNT THIS WORKING???????
-        //++++++++++++++++++++++++++++++++++++++++++
-        //++++++++++++++++++++++++++++++++++++++++++
+        };
         API.findOne(propertyId)
-        .then(res => {
-            this.setState({
-                currentProperty: res.data
-            });
-        })
-        .catch(err => console.log(err));
+            .then(res => {
+                this.setState({
+                    currentProperty: res.data
+                });
+            })
+            .catch(err => console.log(err));
+    }
+
+    //function to update the property selected
+    updateProperty = (event) => {
+        event.preventDefault();
+        console.log("Starting Update...");
+        API.updateProperty(this.state.currentProperty)
+            .then(res => {
+                this.setState({
+                    resultsArray: [],
+                    currentProperty: {}
+                });
+                const select = document.getElementById("propertySelector");
+                select.innerHTML = "";
+            })
+            .then(() => {
+                this.getAllProperties();
+                window.location.reload();
+            })
+            .catch(err => console.log(err));
     }
 
     render() {
@@ -73,9 +96,9 @@ class UpdateProperty extends React.Component {
                 <h2>Update Property</h2>
                 <label>Choose a Property to Update</label>
                 <select
-                name="propertyId"
-                id="propertySelector"
-                onChange={this.handlePropertyChange}
+                    name="propertyId"
+                    id="propertySelector"
+                    onChange={this.handlePropertyChange}
                 >
                     <option>Please Select a Property</option>
                 </select>
@@ -91,6 +114,8 @@ class UpdateProperty extends React.Component {
                     returnOnEquity={this.state.currentProperty.returnOnEquity}
                     internalRateOfReturn={this.state.currentProperty.internalRateOfReturn}
                     disposition={this.state.currentProperty.disposition}
+                    handleFormSubmit={this.updateProperty}
+                    handleInputChange={this.handleInputChange}
                     buttonLabel={"Update Property"}
                 />
                 <button className="btn btn-danger delete-button">Delete Property</button>
