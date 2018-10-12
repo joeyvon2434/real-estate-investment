@@ -2,41 +2,44 @@ import React from "react";
 import "./Team.css";
 import TeamMemberCard from "../../components/TeamMemberCard";
 import { Container, Row, Col } from "reactstrap";
+import API from "../../utils/API";
 
 class Team extends React.Component {
-    
+
     state = {
-        teamMembers: [
-            {
-                name:"Kevin",
-                summary: "Summary with lots of words and all kinds of fun stuff about the people on the team.",
-                id: "1"
-            },
-            {
-                name: "Joe",
-                summary: "Summary with lots of other words and all kinds of fun stuff about the people on the team.",
-                id: "2"
-            }
-        ]
+        teamMembers: []
     }
-    
-    
+
+    componentDidMount() {
+        this.getAllTeamMembers();
+    }
+
+    getAllTeamMembers = () => {
+        console.log("Getting team members...");
+        API.getAllTeamMembers()
+            .then(res => {
+                this.setState({
+                    teamMembers: res.data
+                });
+            })
+            .catch(err => console.log(err));
+    }
+
     render() {
         return (
             <div className="wrapper">
                 <h2>Our Team</h2>
                 <Container fluid>
-                <Row>
-                {this.state.teamMembers.map(member => (
-                <Col md="6">
-                <TeamMemberCard
-                    key={member.id}
-                    memberName={member.name}
-                    summary={member.summary}
-                />
-                </Col>
-                ))}
-                </Row>
+                    <Row>
+                        {this.state.teamMembers.map(member => (
+                            <Col md="6" key={member._id}>
+                                <TeamMemberCard
+                                    memberName={member.name}
+                                    summary={member.summary}
+                                />
+                            </Col>
+                        ))}
+                    </Row>
                 </Container>
             </div>
         )

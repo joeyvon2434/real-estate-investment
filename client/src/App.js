@@ -10,6 +10,8 @@ import SignIn from "./pages/SignIn";
 import AdminPage from "./pages/AdminPage";
 import MakeNewProperty from "./pages/MakeNewProperty";
 import UpdateProperty from "./pages/UpdateProperty";
+import AddTeamMember from "./pages/AddTeamMember";
+import UpdateTeamMember from "./pages/UpdateTeamMember";
 import NoMatch from "./pages/NoMatch";
 import NavTabs from "./pages/NavTabs";
 
@@ -27,6 +29,8 @@ const App = () => (
         <Route exact path="/admin" component={AdminPage} />
         <Route exact path="/admin/make-new-property" component={MakeNewProperty} />
         <Route exact path="/admin/update-or-delete-property" component={UpdateProperty} />
+        <Route exact path="/admin/add-a-team-member" component={AddTeamMember} />
+        <Route exact path="/admin/update-or-delete-team-member" component={UpdateTeamMember} />
         <Route component={NoMatch} />
       </Switch>
     </div>

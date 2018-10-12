@@ -6,7 +6,6 @@ import API from "../../utils/API";
 
 class UpdateProperty extends React.Component {
 
-
     state = {
         resultsArray: [],
         currentProperty: {}
@@ -44,8 +43,6 @@ class UpdateProperty extends React.Component {
         event.preventDefault();
         const { name, value } = event.target;
         const updatedProperty = Object.assign({}, this.state.currentProperty);
-        console.log("Updated Property");
-        console.log(updatedProperty);
 
         updatedProperty[name] = value;
 
@@ -57,11 +54,8 @@ class UpdateProperty extends React.Component {
     //handles form updates and autopopulate when a property is selected
     handlePropertyChange = (event) => {
         event.preventDefault();
-        const { value } = event.target;
-        const propertyId = {
-            id: value
-        };
-        API.findOne(propertyId)
+        const { value } = event.target; 
+        API.findOne(value)
             .then(res => {
                 this.setState({
                     currentProperty: res.data
@@ -82,7 +76,7 @@ class UpdateProperty extends React.Component {
                 });
                 const select = document.getElementById("propertySelector");
                 select.innerHTML = "";
-                alert("Property Successfully Updated!")
+                alert("Property Successfully Updated!");
             })
             .then(() => {
                 this.getAllProperties();
@@ -94,8 +88,9 @@ class UpdateProperty extends React.Component {
     //function to delete a property
     deleteProperty = () => {
         const id =this.state.currentProperty._id;
-        console.log(id);
         API.removeProperty(id)
+        .then(res => console.log("success"))
+        .catch(err => console.log(err));
     }
 
     render() {
