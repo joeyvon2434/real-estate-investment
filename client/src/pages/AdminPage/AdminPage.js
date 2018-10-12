@@ -14,9 +14,9 @@ class AdminPage extends React.Component {
                 <br></br>
                 <a href="/admin/update-or-delete-property">Update or Delete a Property</a>
                 <br></br>
-                <a href="/admin/update-or-delete-property">Add a Team Member</a>
+                <a href="/admin/add-a-team-member">Add a Team Member</a>
                 <br></br>
-                <a href="/admin/update-or-delete-property">Update or Team Member</a>
+                <a href="/admin/update-or-delete-team-member">Update or Team Member</a>
 
             </div>
         )

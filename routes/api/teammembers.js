@@ -14,8 +14,8 @@ router.route("/create").post(teamController.createMember);
 //Route updates / deletes a property, and should be protected to only allow logged in users
 router.route("/member/:id")
 .get(teamController.findOne)
-.put(teamController.updateProperty)
-.delete(teamController.deleteProperty);
+.put(teamController.updateMember)
+.delete(teamController.deleteMember);
 
 
 //export the router for use by express

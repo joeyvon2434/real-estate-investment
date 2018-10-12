@@ -1,5 +1,6 @@
 const db = require("../models");
 
+//Controller for database calls to the properties colleection
 module.exports = {
 
     //route to get all properties

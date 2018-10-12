@@ -8,3 +8,6 @@ router.use("/properties", propertyRoutes);
 router.use("/team", teammembers);
 
 module.exports = router;
+
+
+//how to add multiple API routes to different controllers express router
