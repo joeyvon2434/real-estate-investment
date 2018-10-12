@@ -38,7 +38,6 @@ export default {
         return axios.get("/api/team/member/" + id);
     },
     updateMember: (memberInfo) =>{
-        console.log(memberInfo);
         return axios.put("/api/team/member/" + memberInfo._id, memberInfo);
     },
 

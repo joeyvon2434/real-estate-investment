@@ -27,7 +27,6 @@ class UpdateTeamMember extends React.Component {
     getAllTeamMembers = () => {
         API.getAllTeamMembers()
         .then(res => {
-            console.log(res.data);
             this.setState({
                 resultsArray: res.data
             });
@@ -56,7 +55,6 @@ class UpdateTeamMember extends React.Component {
         const { value } = event.target;
         API.findOneMember(value)
         .then(res => {
-            console.log(res.data);
             this.setState({
                 currentMember: res.data
             });
