@@ -1,0 +1,15 @@
+.TeamMemberCard-wrapper {
+    margin: 0;
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.bullet-text {
+    font-size: 14px;
+}
+
+.property-image {
+    width: 80%;
+    max-width: 300px;
+}

@@ -54,11 +54,6 @@ class MakeNewProperty extends React.Component {
         })
     }
 
-    showState = (event) => {
-        event.preventDefault();
-        console.log(this.state);
-    }
-
     render() {
         return (
             <div className="wrapper">
@@ -77,7 +72,6 @@ class MakeNewProperty extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                <button className="btn btn-primary" onClick={this.showState}>Show State</button>
             </div>
         )
     }

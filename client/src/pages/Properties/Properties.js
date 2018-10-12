@@ -16,7 +16,6 @@ class Properties extends React.Component {
     getAllProperties = () => {
         API.getAllProperties()
         .then(res => {
-            console.log(res.data);
             this.setState({
                 resultsArray: res.data
             })
