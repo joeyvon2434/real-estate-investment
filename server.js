@@ -28,51 +28,51 @@ if (process.env.NODE_ENV === "production") {
 
 //Nodemailer authorization and configuration
     //Set auth based on dev or production
-// let auth= '';
-// if (process.env.NODE_ENV === 'prodution') {
-//     auth = process.env;
-// }
-// else {
-//     auth = require('./config.json');
-// };
+let auth= '';
+if (process.env.NODE_ENV === 'production') {
+    auth = process.env;
+}
+else {
+    auth = require('./config.json');
+};
 //use auth to create a transporter and configure connection to send grid
-// const transporter = nodemailer.createTransport({
-//     service: "Sendgrid",
-//     auth: {
-//         user: auth.SENDGRID_USERNAME, pass: auth.SENDGRID_PASSWORD
-//     }
-// });
-// app.post('/sendEmail', (req,res) => {
-//     const message = req.body.message;
-//     const name = req.body.name;
-//     const phone = req.body.phone;
-//     const emailAddress = req.body.emailAddress;
-//     transporter.sendMail({
-//         from: "app111799754@heroku.com",
-//         to: 'cfield2434@yahoo.com',
-//         subject: `ROH Properties Interest from ${name}`,
-//         html: `<h4>${name} is interested in ROH properties.</h4>
-//         <ul>
-//             <li>Contact information: </li>
-//             <li>Name: ${name}</li>
-//             <li>Email: ${emailAddress}</li>
-//             <li>phone: ${phone}</li>
-//         </ul>
-//         <h3>Message:</h3>
-//         <h4>${message}</h4>
-//         `
-//     }, (err, info) => {
-//         if(err) {
-//             res.send(err);
-//         }
-//         else {
-//             res.status(200).json({
-//                 success: true,
-//                 message: 'Email Sent'
-//             });
-//         }
-//     });
-// });
+const transporter = nodemailer.createTransport({
+    service: "Sendgrid",
+    auth: {
+        user: auth.SENDGRID_USERNAME, pass: auth.SENDGRID_PASSWORD
+    }
+});
+app.post('/sendEmail', (req,res) => {
+    const message = req.body.message;
+    const name = req.body.name;
+    const phone = req.body.phone;
+    const emailAddress = req.body.emailAddress;
+    transporter.sendMail({
+        from: "app111799754@heroku.com",
+        to: 'cfield2434@yahoo.com',
+        subject: `ROH Properties Interest from ${name}`,
+        html: `<h4>${name} is interested in ROH properties.</h4>
+        <ul>
+            <li>Contact information: </li>
+            <li>Name: ${name}</li>
+            <li>Email: ${emailAddress}</li>
+            <li>phone: ${phone}</li>
+        </ul>
+        <h3>Message:</h3>
+        <h4>${message}</h4>
+        `
+    }, (err, info) => {
+        if(err) {
+            res.send(err);
+        }
+        else {
+            res.status(200).json({
+                success: true,
+                message: 'Email Sent'
+            });
+        }
+    });
+});
 
 
 //set up routes in the express instance
