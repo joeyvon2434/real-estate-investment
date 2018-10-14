@@ -28,20 +28,20 @@ if (process.env.NODE_ENV === "production") {
 
 //Nodemailer authorization and configuration
     //Set auth based on dev or production
-let auth= '';
-if (process.env.NODE_ENV === 'prodution') {
-    auth = process.env;
-}
-else {
-    auth = require('./config.json');
-};
+// let auth= '';
+// if (process.env.NODE_ENV === 'prodution') {
+//     auth = process.env;
+// }
+// else {
+//     auth = require('./config.json');
+// };
 //use auth to create a transporter and configure connection to send grid
-const transporter = nodemailer.createTransport({
-    service: "Sendgrid",
-    auth: {
-        user: auth.SENDGRID_USERNAME, pass: auth.SENDGRID_PASSWORD
-    }
-});
+// const transporter = nodemailer.createTransport({
+//     service: "Sendgrid",
+//     auth: {
+//         user: auth.SENDGRID_USERNAME, pass: auth.SENDGRID_PASSWORD
+//     }
+// });
 // app.post('/sendEmail', (req,res) => {
 //     const message = req.body.message;
 //     const name = req.body.name;
