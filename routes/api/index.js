@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const propertyRoutes = require("./properties");
 const teammembers = require("./teammembers");
+    //const email = require("./email");
 
 //Property Routes set up here (in propertyRoutes.js)
 router.use("/properties", propertyRoutes);
 
 router.use("/team", teammembers);
 
+    //router.use("/send-email-message");
+
 module.exports = router;
-
-
-//how to add multiple API routes to different controllers express router

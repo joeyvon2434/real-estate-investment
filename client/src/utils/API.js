@@ -43,5 +43,11 @@ export default {
 
     removeMember: (id) => {
         return axios.delete("/api/team/member/" + id);
+    },
+
+    //Email Route
+    //==========================================
+    sendEmail: (messageDetails) => {
+        return axios.post("/sendEmail", messageDetails);
     }
 };
