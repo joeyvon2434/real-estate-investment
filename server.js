@@ -1,5 +1,8 @@
 //pull in express to run the backend w/ node
-const express =require("express");
+const express = require("express");
+
+//Pull in nodemailer package
+const nodemailer = require("nodemailer");
 
 //pull in package for creating MongoDB models
 const mongoose = require("mongoose");
