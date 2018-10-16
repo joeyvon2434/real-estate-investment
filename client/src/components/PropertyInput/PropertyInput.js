@@ -51,6 +51,25 @@ class PropertyInput extends React.Component {
                         <label>Disposition - sold properties only</label>
                         <input type="text" className="form-control" name="disposition" placeholder={this.props.disposition} onChange={this.props.handleInputChange} />
                     </div>
+                    <div className="form-group">
+                        <label>Property pictures</label>
+                        <input type="text" className="form-control" name="pic1" placeholder={this.props.pic1} onChange={this.props.handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        <input type="text" className="form-control" name="pic2" placeholder={this.props.pic2} onChange={this.props.handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        
+                        <input type="text" className="form-control" name="pic3" placeholder={this.props.pic3} onChange={this.props.handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        
+                        <input type="text" className="form-control" name="pic4" placeholder={this.props.pic4} onChange={this.props.handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        
+                        <input type="text" className="form-control" name="pic5" placeholder={this.props.pic5} onChange={this.props.handleInputChange} />
+                    </div>
         
                     <button className="btn btn-primary" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
                 

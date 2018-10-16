@@ -9,10 +9,11 @@ class TeamMemberCard extends React.Component {
 
 
     render() {
+        console.log(this.props.picture);
         return (
             <div>
                     <div className="TeamMemberCard-wrapper">
-                        <img src="https://via.placeholder.com/300/09f/fff.png" alt="team member"></img>
+                        <img src={this.props.picture} alt="team member"></img>
                         <h3>{this.props.memberName}</h3>
                         <p>{this.props.summary}</p>
                     </div>

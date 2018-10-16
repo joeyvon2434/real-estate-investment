@@ -36,6 +36,7 @@ class Team extends React.Component {
                                 <TeamMemberCard
                                     memberName={member.name}
                                     summary={member.summary}
+                                    picture={member.picture}
                                 />
                             </Col>
                         ))}

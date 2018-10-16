@@ -109,6 +109,7 @@ class UpdateTeamMember extends React.Component {
                 <TeamInput
                     name={this.state.currentMember.name}
                     summary={this.state.currentMember.summary}
+                    picture={this.state.currentMember.picture}
                     buttonLabel={"Update Team Member"}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.updateMember}

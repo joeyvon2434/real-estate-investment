@@ -4,6 +4,7 @@ import {Container, Row, Col} from "reactstrap";
 
 
 class PropertyCard extends React.Component {
+
     
     displaySold = () => {
         if(this.props.propertySold) {
@@ -24,7 +25,7 @@ class PropertyCard extends React.Component {
             <Container fluid>
             <Row>
                 <Col xs="12" sm="12" md="12" lg="5">
-                <img className="property-image" src={this.props.imageLink} alt="placeholder" />
+                <img className="property-image" src={this.props.pic1} alt="placeholder" />
                 </Col>
                 <Col xs="12" sm="12" md="12" lg="7">
                 <h2 className="property-title">{this.props.propertyName}</h2>

@@ -34,6 +34,21 @@ const propertySchema = new Schema({
     propertySold: {
         type: Boolean,
         required: true
+    },
+    pic1: {
+        type: String
+    },
+    pic2: {
+        type: String
+    },
+    pic3: {
+        type: String
+    },
+    pic4: {
+        type: String
+    },
+    pic5: {
+        type: String
     }
 });
 

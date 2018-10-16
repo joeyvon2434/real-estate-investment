@@ -15,13 +15,18 @@ class MakeNewProperty extends React.Component {
         returnOnEquity: 0,
         internalRateOfReturn: 0,
         disposition: "",
-        propertySold: true
+        propertySold: true,
+        pic1: "",
+        pic2: "",
+        pic3: "",
+        pic4: "",
+        pic5: ""
     }
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
 
+        //set new property for submission
         const newProperty = {
             propertyName: this.state.propertyName,
             propertyType: this.state.PropertyType,
@@ -32,18 +37,22 @@ class MakeNewProperty extends React.Component {
             returnOnEquity: this.state.returnOnEquity,
             internalRateOfReturn: this.state.internalRateOfReturn,
             disposition: this.state.disposition,
-            propertySold: this.state.propertySold
+            propertySold: this.state.propertySold,
+            pic1: this.state.pic1,
+            pic2: this.state.pic2,
+            pic3: this.state.pic3,
+            pic4: this.state.pic4,
+            pic5: this.state.pic5
         };
 
+        //send newProperty to the API
         API.createNewProperty(newProperty)
-        .then(res => console.log("success"))
+        .then(res => {
+            console.log("success");
+            alert("Property Successfully Added!");
+    })
+    .then(window.location.reload())
         .catch(err => console.log(err));
-
-        // API.createNewProperty(newProperty)
-        //     .then(res => {
-        //         console.log(res);
-        //     })
-        //     .catch(err => console.log(err));
     }
 
     handleInputChange = (event) => {
@@ -69,6 +78,11 @@ class MakeNewProperty extends React.Component {
                     internalRateOfReturn={"IRR: eg 3.90"}
                     disposition={"Date: e.g. December, 2017"}
                     buttonLabel={"Create New Property"}
+                    pic1={"pic1"}
+                    pic2={"pic2"}
+                    pic3={"pic3"}
+                    pic4={"pic4"}
+                    pic5={"pic5"}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />

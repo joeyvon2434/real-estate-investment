@@ -1,8 +1,8 @@
-    //const router = require("express").Router();
-    //const emailController = require("../../controlles/emailController");
+//     const router = require("express").Router();
+//     const emailController = require("../../controllers/emailController");
 
 
-//send email
-    //router.route("/").post(emailController.sendMail);
+// //send email at route /email/
+//     router.route("/").post(emailController.sendMail);
 
-    //module.exports = router;
+//     module.exports = router;

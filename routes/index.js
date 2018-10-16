@@ -5,8 +5,10 @@ const apiRoutes = require("./api");
 
 //API routes
 router.use("/api", apiRoutes);
+
 //Email Route
-//May need to pull nodemailer config into this file 
+//May need to pull nodemailer config into this file
+//router.use("/email", email);
 
 
 //send the user the react app if no routes are hit

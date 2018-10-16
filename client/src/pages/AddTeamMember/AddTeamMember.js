@@ -7,7 +7,8 @@ class AddTeamMember extends React.Component {
 
     state = {
         name: "",
-        summary: ""
+        summary: "",
+        picture: ""
     }
 
     handleFormSubmit = (event) => {
@@ -16,7 +17,8 @@ class AddTeamMember extends React.Component {
 
         const newMember = {
             name: this.state.name,
-            summary: this.state.summary
+            summary: this.state.summary,
+            picture: this.state.picture
         };
 
         API.createNewTeamMember(newMember)

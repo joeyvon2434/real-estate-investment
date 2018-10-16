@@ -8,6 +8,6 @@ router.use("/properties", propertyRoutes);
 
 router.use("/team", teammembers);
 
-    //router.use("/send-email-message");
+    //router.use("/send-email-message", email);
 
 module.exports = router;

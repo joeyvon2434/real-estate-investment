@@ -35,7 +35,8 @@ if (process.env.NODE_ENV === 'production') {
 else {
     auth = require('./config.json');
 };
-//use auth to create a transporter and configure connection to send grid
+
+//use auth to create a transporter and configure connection to SendGrid
 const transporter = nodemailer.createTransport({
     service: "Sendgrid",
     auth: {

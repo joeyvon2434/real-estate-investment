@@ -10,6 +10,10 @@ const teamMemberSchema = new Schema({
     summary: {
         type: String,
         required: true
+    },
+    picture: {
+        type: String,
+        required: true
     }
 });
 

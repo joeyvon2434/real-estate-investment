@@ -14,6 +14,10 @@ class TeamInput extends React.Component {
                         <label>Summary (* required *)</label>
                         <input type="text" className="form-control" name="summary" placeholder={this.props.summary} onChange={this.props.handleInputChange} />
                     </div>
+                    <div className="form-group">
+                        <label>Picture (* required *)</label>
+                        <input type="text" className="form-control" name="picture" placeholder={this.props.picture} onChange={this.props.handleInputChange} />
+                    </div>
         
                     <button className="btn btn-primary" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
                 

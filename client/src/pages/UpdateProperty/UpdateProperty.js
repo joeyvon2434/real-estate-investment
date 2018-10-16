@@ -117,6 +117,11 @@ class UpdateProperty extends React.Component {
                     returnOnEquity={this.state.currentProperty.returnOnEquity}
                     internalRateOfReturn={this.state.currentProperty.internalRateOfReturn}
                     disposition={this.state.currentProperty.disposition}
+                    pic1={this.state.currentProperty.pic1}
+                    pic2={this.state.currentProperty.pic2}
+                    pic3={this.state.currentProperty.pic3}
+                    pic4={this.state.currentProperty.pic4}
+                    pic5={this.state.currentProperty.pic5}
                     handleFormSubmit={this.updateProperty}
                     handleInputChange={this.handleInputChange}
                     buttonLabel={"Update Property"}

@@ -29,7 +29,11 @@ class Properties extends React.Component {
                 <h2>Properties Page</h2>
                 {this.state.resultsArray.map( property => (
                 <PropertyCard 
-                    imageLink={"https://via.placeholder.com/300/09f/fff.png"} 
+                    pic1={property.pic1} 
+                    pic2={property.pic2} 
+                    pic3={property.pic3} 
+                    pic4={property.pic4} 
+                    pic5={property.pic5} 
                     key={property._id}
                     propertyName={property.propertyName}
                     summary={property.summary}
