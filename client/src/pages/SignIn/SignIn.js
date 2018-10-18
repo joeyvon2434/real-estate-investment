@@ -1,22 +1,38 @@
 import React from "react";
 import "./SignIn.css";
 
+
 class SignIn extends React.Component {
 
+    login() {
+        this.props.auth.login();
+    }
+
+    logout() {
+        this.props.auth.logout();
+    }
+
     render() {
+        console.log(this.props.auth);
+        const { isAuthenticated } = this.props.auth;
+
         return (
             <div className="wrapper">
                 <h2>Sign In Page</h2>
-                <form>
-                    <div className="form-group">
-                        <label>Username</label>
-                        <input type="text" className="form-control" name="username" placeholder="username" />
-                    </div>
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" name="password" placeholder="password" />
-                    </div>
-                </form>
+
+
+                {!isAuthenticated() ? (<button
+                    onClick={this.login.bind(this)}
+                >
+                    Log In
+                </button>
+                ) : <button
+                    onClick={this.logout.bind(this)}
+                >
+                        Log Out
+               </button>}
+
+
             </div>
         )
     }

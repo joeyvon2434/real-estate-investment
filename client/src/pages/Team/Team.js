@@ -30,9 +30,9 @@ class Team extends React.Component {
             <div className="wrapper">
                 <h2>Our Team</h2>
                 <Container fluid>
-                    <Row>
+                    <Row className="equal justify-content-center">
                         {this.state.teamMembers.map(member => (
-                            <Col md="6" key={member._id}>
+                            <Col md="5" key={member._id} className="card-border m-4 card-column">
                                 <TeamMemberCard
                                     memberName={member.name}
                                     summary={member.summary}
