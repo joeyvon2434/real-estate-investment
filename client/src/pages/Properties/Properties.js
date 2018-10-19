@@ -2,6 +2,8 @@ import React from "react";
 import "./Properties.css";
 import PropertyCard from "../../components/PropertyCard";
 import API from "../../utils/API";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 
 class Properties extends React.Component {
 
@@ -26,30 +28,37 @@ class Properties extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                
+                <ReactCSSTransitionGroup
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1500}
+                    transitionLeaveTimeout={1500}
+                >
+
                     <h2 className="page-title">Properties Page</h2>
                     <div className="property-wrapper">
-                    {this.state.resultsArray.map(property => (
-                        <PropertyCard
-                            pic1={property.pic1}
-                            pic2={property.pic2}
-                            pic3={property.pic3}
-                            pic4={property.pic4}
-                            pic5={property.pic5}
-                            key={property._id}
-                            propertyName={property.propertyName}
-                            summary={property.summary}
-                            propertyType={property.propertyType}
-                            yearBuilt={property.yearBuilt}
-                            strategy={property.strategy}
-                            location={property.location}
-                            propertySold={property.propertySold}
-                            returnOnEquity={property.returnOnEquity}
-                            internalRateOfReturn={property.internalRateOfReturn}
-                            disposition={property.disposition}
-                        />
-                    ))}
-                </div>
+                        {this.state.resultsArray.map(property => (
+                            <PropertyCard
+                                pic1={property.pic1}
+                                pic2={property.pic2}
+                                pic3={property.pic3}
+                                pic4={property.pic4}
+                                pic5={property.pic5}
+                                key={property._id}
+                                propertyName={property.propertyName}
+                                summary={property.summary}
+                                propertyType={property.propertyType}
+                                yearBuilt={property.yearBuilt}
+                                strategy={property.strategy}
+                                location={property.location}
+                                propertySold={property.propertySold}
+                                returnOnEquity={property.returnOnEquity}
+                                internalRateOfReturn={property.internalRateOfReturn}
+                                disposition={property.disposition}
+                            />
+                        ))}
+                    </div>
+                </ReactCSSTransitionGroup>
             </div>
         )
     }

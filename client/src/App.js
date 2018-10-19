@@ -15,6 +15,7 @@ import UpdateTeamMember from "./pages/UpdateTeamMember";
 import Callback from "./components/Callback";
 import NoMatch from "./pages/NoMatch";
 import NavTabs from "./pages/NavTabs";
+import Footer from "./components/Footer";
 import Auth from './Auth/Auth';
 import SecuredRoute from "./components/SecuredRoute";
 import history from "./history";
@@ -56,6 +57,7 @@ class App extends React.Component {
               <Route component={NoMatch} />
             </Switch>
           </div>
+          <Footer />
         </div>
 
       </Router>

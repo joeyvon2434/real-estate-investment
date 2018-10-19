@@ -1,6 +1,6 @@
 import React from "react";
 import "./SignIn.css";
-
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 class SignIn extends React.Component {
 
@@ -18,24 +18,30 @@ class SignIn extends React.Component {
 
         return (
             <div className="wrapper">
-                <h2 className="page-title">Sign In Page</h2>
+                <ReactCSSTransitionGroup
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1500}
+                    transitionLeaveTimeout={1500}
+                >
+                    <h2 className="page-title">Sign In Page</h2>
 
 
-                {!isAuthenticated() ? (
-                    <button
-                        className="btn"
-                        onClick={this.login.bind(this)}
-                    >
-                        Log In
-                </button>
-                ) : <button
+                    {!isAuthenticated() ? (
+                        <button
+                            className="btn"
+                            onClick={this.login.bind(this)}
+                        >
+                            Log In
+                        </button>
+                            ) : <button
                         className="btn"
                         onClick={this.logout.bind(this)}
-                >
-                        Log Out
-               </button>}
+                        >
+                            Log Out
+                        </button>}
 
-
+                </ReactCSSTransitionGroup>
             </div>
         )
     }

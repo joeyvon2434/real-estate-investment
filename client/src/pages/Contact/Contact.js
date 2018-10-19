@@ -1,6 +1,7 @@
 import React from "react";
 import "./Contact.css";
 import API from "../../utils/API";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 class Contact extends React.Component {
 
@@ -18,39 +19,46 @@ class Contact extends React.Component {
             [name]: value
         })
     }
-    
+
     sendMessage = (event) => {
         event.preventDefault();
         console.log(this.state);
-        if(this.state.emailAddress === "" || this.state.name === "" || this.state.message === "") {
+        if (this.state.emailAddress === "" || this.state.name === "" || this.state.message === "") {
             return alert("Email, Name, and Message are required fields");
         };
         API.sendEmail(this.state)
-        .then(res => {
-            console.log('success');
-            window.location.href = "/";
-    })
-        .catch(err => console.log(err));
+            .then(res => {
+                console.log('success');
+                window.location.href = "/";
+            })
+            .catch(err => console.log(err));
     }
 
     render() {
         return (
             <div className="wrapper">
-                <h2 className="page-title">Contact Page</h2>
-                <form>
-                    <label>Email Address</label><br></br>
-                    <input onChange={this.handleInputChange} type="text" name="emailAddress"></input><br></br>
-                    <label>Name</label><br></br>
-                    <input onChange={this.handleInputChange} type="text" name="name"></input><br></br>
-                    <label>Phone</label><br></br>
-                    <input onChange={this.handleInputChange} type="text" name="phone"></input><br></br>
-                    <label>Message</label><br></br>
-                    <textarea onChange={this.handleInputChange} type="text" name="message"></textarea><br></br>
-                    <button
-                    onClick={this.sendMessage}
-                    className="btn"
-                    >Send Message</button>
-                </form>
+                <ReactCSSTransitionGroup
+                    transitionName="fade"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1500}
+                    transitionLeaveTimeout={1500}
+                >
+                    <h2 className="page-title">Contact Page</h2>
+                    <form className="contact-form">
+                        <label className="input-label">Email Address</label><br></br>
+                        <input onChange={this.handleInputChange} type="text" name="emailAddress" className="input-field"></input><br></br>
+                        <label className="input-label">Name</label><br></br>
+                        <input onChange={this.handleInputChange} type="text" name="name" className="input-field"></input><br></br>
+                        <label className="input-label">Phone</label><br></br>
+                        <input onChange={this.handleInputChange} type="text" name="phone" className="input-field"></input><br></br>
+                        <label className="input-label">Message</label><br></br>
+                        <textarea onChange={this.handleInputChange} type="text" name="message" className="input-field text-field"></textarea><br></br>
+                        <button
+                            onClick={this.sendMessage}
+                            className="btn"
+                        >Send Message</button>
+                    </form>
+                </ReactCSSTransitionGroup>
             </div>
         )
     }

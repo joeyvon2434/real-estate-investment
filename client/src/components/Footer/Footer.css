@@ -1,0 +1,20 @@
+.footer {
+    width: 100%;
+    text-align: right;
+    padding-bottom: 7px;
+    padding-right: 10px;
+}
+
+.designer-link {
+    text-decoration: none;
+    padding: 2px;
+}
+
+.designer-link:hover {
+    /* color: rgb(155, 29, 29); */
+    color: rgb(78, 238, 104);
+    background: rgb(15, 23, 70);
+    background: rgb(15, 23, 70, 0.5);
+    box-shadow: 0 0 8px rgb(78, 238, 104);
+    border-radius: 10px;
+}

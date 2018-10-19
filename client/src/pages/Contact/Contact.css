@@ -1,0 +1,21 @@
+.contact-form {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.input-label {
+    text-shadow: 0 0 1px black;
+    font-size: 1.5em;
+}
+
+.input-field {
+    width: 90%;
+    background: rgb(187, 207, 226);
+    box-shadow: 0 2px 3px rgb(56, 56, 56);
+}
+
+.text-field {
+    height: 8em;
+    margin-bottom: 15px;
+}

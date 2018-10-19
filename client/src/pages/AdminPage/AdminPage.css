@@ -1,0 +1,30 @@
+.admin-link {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 0 0 3px black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+.admin-link:hover {
+    color: rgb(199, 66, 66);
+    background: rgb(46, 59, 134);
+    background: rgb(46, 59, 134, 0.5);
+    box-shadow: 0 0 5px white;
+    border-radius: 5px;
+}
+
+.admin-menu-title {
+    width: 100%;
+    text-align: center;
+}
+
+.admin-menu {
+    display: block;
+    font-size: 1em;
+    text-shadow: 0 0 2px black;
+}

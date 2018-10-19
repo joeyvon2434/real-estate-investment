@@ -5,7 +5,8 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
       domain: 'josephvonedwins.auth0.com',
       clientID: 'jnex0hE63RM1ub4ugJivwuTBUR98BpIR',
-      redirectUri: /*'http://localhost:3000/callback'*/'https://whispering-plains-33899.herokuapp.com/callback',
+      redirectUri: 'http://localhost:3000/callback',
+      // redirectUri: 'https://whispering-plains-33899.herokuapp.com/callback',
       responseType: 'token id_token',
       scope: 'openid'
     });
