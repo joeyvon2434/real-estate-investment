@@ -48,7 +48,7 @@ class Contact extends React.Component {
                     <textarea onChange={this.handleInputChange} type="text" name="message"></textarea><br></br>
                     <button
                     onClick={this.sendMessage}
-                    className="btn btn-primary"
+                    className="btn"
                     >Send Message</button>
                 </form>
             </div>

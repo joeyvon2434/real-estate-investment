@@ -19,7 +19,7 @@ class TeamInput extends React.Component {
                         <input type="text" className="form-control" name="picture" placeholder={this.props.picture} onChange={this.props.handleInputChange} />
                     </div>
         
-                    <button className="btn btn-primary" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
+                    <button className="btn" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
                 
                 </form>
             </div>

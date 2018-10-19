@@ -70,7 +70,7 @@ class PropertyInput extends React.Component {
                         <input type="text" className="form-control" name="pic5" placeholder={this.props.pic5} onChange={this.props.handleInputChange} />
                     </div>
         
-                    <button className="btn btn-primary" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
+                    <button className="btn" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
                 
                 </form>
             </div>

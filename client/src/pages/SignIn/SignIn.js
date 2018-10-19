@@ -21,13 +21,16 @@ class SignIn extends React.Component {
                 <h2 className="page-title">Sign In Page</h2>
 
 
-                {!isAuthenticated() ? (<button
-                    onClick={this.login.bind(this)}
-                >
-                    Log In
+                {!isAuthenticated() ? (
+                    <button
+                        className="btn"
+                        onClick={this.login.bind(this)}
+                    >
+                        Log In
                 </button>
                 ) : <button
-                    onClick={this.logout.bind(this)}
+                        className="btn"
+                        onClick={this.logout.bind(this)}
                 >
                         Log Out
                </button>}
