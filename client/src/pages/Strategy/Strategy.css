@@ -1,0 +1,6 @@
+.article-section {
+    padding: 2%;
+    background: rgb(88, 89, 100);
+    background: rgb(88, 89, 100, 0.8);
+    text-shadow: 0 0 1px black;
+}

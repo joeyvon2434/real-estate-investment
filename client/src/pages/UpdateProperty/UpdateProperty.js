@@ -128,7 +128,7 @@ class UpdateProperty extends React.Component {
                 />
                 <button
                     value={this.state.currentProperty._id}
-                    className="btn btn-danger delete-button"
+                    className="btn delete-button"
                     onClick={this.deleteProperty}
                     >
                     Delete Property: {this.state.currentProperty.propertyName}
