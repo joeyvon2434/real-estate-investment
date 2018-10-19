@@ -36,7 +36,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Contact Page</h2>
+                <h2 className="page-title">Contact Page</h2>
                 <form>
                     <label>Email Address</label><br></br>
                     <input onChange={this.handleInputChange} type="text" name="emailAddress"></input><br></br>

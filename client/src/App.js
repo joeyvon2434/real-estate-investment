@@ -33,25 +33,27 @@ class App extends React.Component {
       <Router >
 
         <div className="total-wrapper">
-          <NavTabs />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/team" component={Team} />
-            <Route exact path="/strategy" component={Strategy} />
-            <Route exact path="/properties" component={Properties} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/signin" render={() => <SignIn auth={auth} />} />
-            <SecuredRoute path="/admin" component={AdminPage} auth={auth} />
-            <SecuredRoute exact path="/admin/make-new-property" component={MakeNewProperty} />
-            <SecuredRoute exact path="/admin/update-or-delete-property" component={UpdateProperty} />
-            <SecuredRoute exact path="/admin/add-a-team-member" component={AddTeamMember} />
-            <SecuredRoute exact path="/admin/update-or-delete-team-member" component={UpdateTeamMember} />
-            <Route exact path="/callback" render={(props) => {
-              handleAuthentication(props);
-              return <Callback {...props} auth={auth} />
-            }} />
-            <Route component={NoMatch} />
-          </Switch>
+          <div className="scroll-wrapper">
+            <NavTabs />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/team" component={Team} />
+              <Route exact path="/strategy" component={Strategy} />
+              <Route exact path="/properties" component={Properties} />
+              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/signin" render={() => <SignIn auth={auth} />} />
+              <SecuredRoute exact path="/admin" component={AdminPage} auth={auth} />
+              <SecuredRoute exact path="/admin/make-new-property" component={MakeNewProperty} auth={auth} />
+              <SecuredRoute exact path="/admin/update-or-delete-property" component={UpdateProperty} auth={auth} />
+              <SecuredRoute exact path="/admin/add-a-team-member" component={AddTeamMember} auth={auth} />
+              <SecuredRoute exact path="/admin/update-or-delete-team-member" component={UpdateTeamMember} auth={auth} />
+              <Route exact path="/callback" render={(props) => {
+                handleAuthentication(props);
+                return <Callback {...props} auth={auth} />
+              }} />
+              <Route component={NoMatch} />
+            </Switch>
+          </div>
         </div>
 
       </Router>

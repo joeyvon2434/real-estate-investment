@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 
 
 function SecuredRoute(props) {
-    console.log(props);
+    console.log(props.location.pathname);
     const Component = props.component
     
     return (

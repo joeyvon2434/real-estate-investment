@@ -18,7 +18,7 @@ class SignIn extends React.Component {
 
         return (
             <div className="wrapper">
-                <h2>Sign In Page</h2>
+                <h2 className="page-title">Sign In Page</h2>
 
 
                 {!isAuthenticated() ? (<button

@@ -97,7 +97,7 @@ class UpdateTeamMember extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Update Team Member</h2>
+                <h2 className="page-title">Update Team Member</h2>
                 <label>Choose a Team Member to Update</label>
                 <select
                     name="memberId"

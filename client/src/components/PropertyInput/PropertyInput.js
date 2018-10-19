@@ -5,7 +5,6 @@ class PropertyInput extends React.Component {
     render() {
         return(
             <div>
-                <h2>Admin Page</h2>
                 <form id="property-form">
                     <div className="form-group">
                         <label>Property Name (* required *)</label>

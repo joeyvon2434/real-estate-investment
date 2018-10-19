@@ -96,7 +96,7 @@ class UpdateProperty extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Update Property</h2>
+                <h2 className="page-title">Update Property</h2>
                 <label>Choose a Property to Update</label>
                 <select
                     name="propertyId"

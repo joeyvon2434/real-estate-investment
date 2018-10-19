@@ -6,7 +6,7 @@ class AdminPage extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Admin Page</h2>
+                <h2 className="page-title">Admin Page</h2>
                 
                 <p>What would you like to do?</p>
                 <br></br>

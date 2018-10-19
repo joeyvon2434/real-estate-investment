@@ -66,7 +66,7 @@ class MakeNewProperty extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Create a New Property</h2>
+                <h2 className="page-title">Create a New Property</h2>
                 <PropertyInput
                     propertyId={null}
                     propertyName={"Property Name"}

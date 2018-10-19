@@ -4,6 +4,6 @@
 
 .card-column {
     box-shadow: 0 2px 3px rgb(56, 56, 56);
-    background: rgb(209, 209, 209);
-    background-image: linear-gradient(to right, rgb(206, 206, 206), white,rgb(206, 206, 206));
+    background: rgb(100, 100, 100);
+    background: rgb(100, 100, 100, 0.7);
 }

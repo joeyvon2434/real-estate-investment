@@ -26,7 +26,7 @@ class Properties extends React.Component {
     render() {
         return(
             <div className="wrapper">
-                <h2>Properties Page</h2>
+                <h2 className="page-title">Properties Page</h2>
                 {this.state.resultsArray.map( property => (
                 <PropertyCard 
                     pic1={property.pic1} 

@@ -37,7 +37,7 @@ class AddTeamMember extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Add a New Team Member</h2>
+                <h2 className="page-title">Add a New Team Member</h2>
                 <TeamInput
                     name={"Input Name"}
                     summary={"Input Summary"}

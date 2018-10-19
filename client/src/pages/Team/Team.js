@@ -28,7 +28,7 @@ class Team extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <h2>Our Team</h2>
+                <h2 className="page-title">Our Team</h2>
                 <Container fluid>
                     <Row className="equal justify-content-center">
                         {this.state.teamMembers.map(member => (
