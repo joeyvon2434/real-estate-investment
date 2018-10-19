@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Team from "./pages/Team";
 import Strategy from "./pages/Strategy";
@@ -17,6 +17,8 @@ import NoMatch from "./pages/NoMatch";
 import NavTabs from "./pages/NavTabs";
 import Auth from './Auth/Auth';
 import SecuredRoute from "./components/SecuredRoute";
+import history from "./history";
+
 
 const auth = new Auth();
 
@@ -30,7 +32,7 @@ const handleAuthentication = (nextState, replace) => {
 class App extends React.Component {
   render() {
     return (
-      <Router >
+      <Router history={history}>
 
         <div className="total-wrapper">
           <div className="scroll-wrapper">

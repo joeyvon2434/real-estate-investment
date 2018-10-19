@@ -93,7 +93,7 @@ class PropertyCard extends React.Component {
             <div className="propertyCard-wrapper">
                 <Container fluid>
                     <Row>
-                        <Col xs="12" sm="12" md="12" lg="5">
+                        <Col xs="12" sm="12" md="12" lg="5" >
 
                             <UncontrolledCarousel items={this.state.pictureArray} />
 
