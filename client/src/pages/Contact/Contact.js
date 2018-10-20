@@ -2,6 +2,7 @@ import React from "react";
 import "./Contact.css";
 import API from "../../utils/API";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ErrorModalBox from "../../components/ErrorModalBox";
 
 class Contact extends React.Component {
 
@@ -9,7 +10,8 @@ class Contact extends React.Component {
         emailAddress: "",
         name: "",
         phone: "",
-        message: ""
+        message: "",
+        showErrorModal: false
     }
 
     handleInputChange = (event) => {
@@ -22,9 +24,10 @@ class Contact extends React.Component {
 
     sendMessage = (event) => {
         event.preventDefault();
+
         console.log(this.state);
         if (this.state.emailAddress === "" || this.state.name === "" || this.state.message === "") {
-            return alert("Email, Name, and Message are required fields");
+            return this.errorModalToggle();
         };
         API.sendEmail(this.state)
             .then(res => {
@@ -34,9 +37,25 @@ class Contact extends React.Component {
             .catch(err => console.log(err));
     }
 
+    //Modal to confirm correct fields are filled out
+    errorModalToggle = () => {
+        const newToggle = !this.state.showErrorModal;
+        this.setState({
+            showErrorModal: newToggle
+        });
+    }
+
     render() {
         return (
             <div className="wrapper">
+            {this.state.showErrorModal ? (<ErrorModalBox
+                    cancelFunction={this.errorModalToggle}
+                    modalText={`The following fields are required:
+                                name
+                                email`}
+                    modalHeadText={`Error: Required Fields!`}
+                    confirmText={`Create: ${this.state.propertyName}`}
+                />) : ""}
                 <ReactCSSTransitionGroup
                     transitionName="fade"
                     transitionEnterTimeout={1500}
