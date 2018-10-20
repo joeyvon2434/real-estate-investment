@@ -25,7 +25,7 @@ class AdminPage extends React.Component {
                     <br></br>
                     <a className="admin-link" href="/admin/add-a-team-member">Add a Team Member</a>
                     <br></br>
-                    <a className="admin-link" href="/admin/update-or-delete-team-member">Update or Team Member</a>
+                    <a className="admin-link" href="/admin/update-or-delete-team-member">Update or Delete Team Member</a>
                     </div>
                 </ReactCSSTransitionGroup>
             </div>

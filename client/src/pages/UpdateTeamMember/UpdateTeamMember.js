@@ -2,12 +2,15 @@ import React from "react";
 import "./UpdateTeamMember.css";
 import TeamInput from "../../components/TeamInput";
 import API from "../../utils/API";
+import ModalBox from "../../components/ModalBox";
 
 class UpdateTeamMember extends React.Component {
 
     state = {
         currentMember: {},
-        resultsArray: []
+        resultsArray: [],
+        showDeleteModal: false,
+        showUpdateModal: false
     }
 
     componentDidMount() {
@@ -67,20 +70,27 @@ class UpdateTeamMember extends React.Component {
         event.preventDefault();
         console.log("Starting Update...");
         API.updateMember(this.state.currentMember)
-        .then(res => {
-            this.setState({
-                resultsArray: [],
-                currentMember: {}
-            });
-            const select = document.getElementById("memberSelector");
-            select.innerHTML = "";
-            alert("Member Successfully Updated");
-        })
-        .then( () => {
-            this.getAllTeamMembers();
-            window.location.reload();
+        .then( (res) => {
+            window.location.replace("/admin");
         })
         .catch(err => console.log(err));
+    }
+
+    //Delete team member confirm modal
+    deleteModalToggle = () => {
+        const newToggle = !this.state.showDeleteModal
+        this.setState({
+            showDeleteModal: newToggle
+        })
+    }
+
+    //Update team member confirm modal
+    updateModalToggle = (event) => {
+        event.preventDefault();
+        const newToggle = !this.state.showUpdateModal
+        this.setState({
+            showUpdateModal: newToggle
+        })
     }
 
     //function to delete a property
@@ -89,7 +99,7 @@ class UpdateTeamMember extends React.Component {
         API.removeMember(id)
         .then(res => {
             console.log("success");
-            window.location.reload();
+            window.location.replace("/admin");
         })
         .catch(err => console.log(err));
     }
@@ -97,6 +107,20 @@ class UpdateTeamMember extends React.Component {
     render() {
         return (
             <div className="wrapper">
+            {this.state.showDeleteModal ? (<ModalBox 
+                                                cancelFunction={this.deleteModalToggle}
+                                                confirmFunction={this.deleteMember}
+                                                modalText={`Are you sure you want to delete ${this.state.currentMember.name}?`}
+                                                modaleHeadText={`Warning: Deleting Team Member`}
+                                                confirmText={`Delete: ${this.state.currentMember.name}`}
+                                            />) : ""}
+            {this.state.showUpdateModal ? (<ModalBox 
+                                                cancelFunction={this.updateModalToggle}
+                                                confirmFunction={this.updateMember}
+                                                modalText={`Are you sure you want to update ${this.state.currentMember.name}?`}
+                                                modalHeadText={`Update Team Member!`}
+                                                confirmText={`Update: ${this.state.currentMember.name}`}
+                                            />) : ""}
                 <h2 className="page-title">Update Team Member</h2>
                 <label>Choose a Team Member to Update</label>
                 <select
@@ -112,12 +136,12 @@ class UpdateTeamMember extends React.Component {
                     picture={this.state.currentMember.picture}
                     buttonLabel={"Update Team Member"}
                     handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.updateMember}
+                    handleFormSubmit={this.updateModalToggle}
                 />
                 <button
                     value={this.state.currentMember._id}
                     className="btn btn-danger delete-button"
-                    onClick={this.deleteMember}
+                    onClick={this.deleteModalToggle}
                     >
                     Delete Team Member: {this.state.currentMember.name}
                 </button>

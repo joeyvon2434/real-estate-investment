@@ -2,13 +2,15 @@ import React from "react";
 import "./AddTeamMember.css";
 import TeamInput from "../../components/TeamInput";
 import API from "../../utils/API";
+import ModalBox from "../../components/ModalBox";
 
 class AddTeamMember extends React.Component {
 
     state = {
         name: "",
         summary: "",
-        picture: ""
+        picture: "",
+        showCreateModal: false
     }
 
     handleFormSubmit = (event) => {
@@ -22,7 +24,10 @@ class AddTeamMember extends React.Component {
         };
 
         API.createNewTeamMember(newMember)
-        .then(res => console.log("success"))
+        .then(res => {
+            console.log("success");
+            window.location.replace("/admin");
+    })
         .catch(err => console.log(err));
     }
 
@@ -34,16 +39,32 @@ class AddTeamMember extends React.Component {
         })
     }
 
+    //Create Property confirm using a created modal
+    createModalToggle = (event) => {
+        event.preventDefault();
+        const newToggle = !this.state.showCreateModal;
+        this.setState({
+            showCreateModal: newToggle
+        });
+    }
+
     render() {
         return (
             <div className="wrapper">
+            {this.state.showCreateModal ? (<ModalBox
+                    cancelFunction={this.createModalToggle}
+                    confirmFunction={this.handleFormSubmit}
+                    modalText={`Are you sure you want to create ${this.state.name}?`}
+                    modalHeadText={`Creating Property!`}
+                    confirmText={`Create: ${this.state.name}`}
+                />) : ""}
                 <h2 className="page-title">Add a New Team Member</h2>
                 <TeamInput
                     name={"Input Name"}
                     summary={"Input Summary"}
                     buttonLabel={"Add New Team Member"}
                     handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit}
+                    handleFormSubmit={this.createModalToggle}
                 />
             </div>
         )

@@ -2,6 +2,7 @@ import React from "react";
 import "./MakeNewProperty.css";
 import PropertyInput from "../../components/PropertyInput";
 import API from "../../utils/API";
+import ModalBox from "../../components/ModalBox";
 
 class MakeNewProperty extends React.Component {
 
@@ -20,7 +21,8 @@ class MakeNewProperty extends React.Component {
         pic2: "",
         pic3: "",
         pic4: "",
-        pic5: ""
+        pic5: "",
+        showCreateModal: false
     }
 
     handleFormSubmit = (event) => {
@@ -47,12 +49,11 @@ class MakeNewProperty extends React.Component {
 
         //send newProperty to the API
         API.createNewProperty(newProperty)
-        .then(res => {
-            console.log("success");
-            alert("Property Successfully Added!");
-    })
-    .then(window.location.reload())
-        .catch(err => console.log(err));
+            .then(res => {
+                console.log("success");
+            })
+            .then(window.location.replace("/admin"))
+            .catch(err => console.log(err));
     }
 
     handleInputChange = (event) => {
@@ -63,9 +64,25 @@ class MakeNewProperty extends React.Component {
         })
     }
 
+    //Create Property confirm using a created modal
+    createModalToggle = (event) => {
+        event.preventDefault();
+        const newToggle = !this.state.showCreateModal;
+        this.setState({
+            showCreateModal: newToggle
+        });
+    }
+
     render() {
         return (
             <div className="wrapper">
+                {this.state.showCreateModal ? (<ModalBox
+                    cancelFunction={this.createModalToggle}
+                    confirmFunction={this.handleFormSubmit}
+                    modalText={`Are you sure you want to create ${this.state.propertyName}?`}
+                    modalHeadText={`Creating Property!`}
+                    confirmText={`Create: ${this.state.propertyName}`}
+                />) : ""}
                 <h2 className="page-title">Create a New Property</h2>
                 <PropertyInput
                     propertyId={null}
@@ -84,7 +101,7 @@ class MakeNewProperty extends React.Component {
                     pic4={"pic4"}
                     pic5={"pic5"}
                     handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit}
+                    handleFormSubmit={this.createModalToggle}
                 />
             </div>
         )
