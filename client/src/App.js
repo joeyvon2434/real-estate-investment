@@ -31,13 +31,15 @@ const handleAuthentication = (nextState, replace) => {
 
 
 class App extends React.Component {
+
+
   render() {
     return (
       <Router history={history}>
 
         <div className="total-wrapper">
           <div className="scroll-wrapper">
-            <NavTabs />
+            <NavTabs auth={auth} />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/team" component={Team} />

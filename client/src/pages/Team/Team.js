@@ -31,6 +31,7 @@ class Team extends React.Component {
             <div className="wrapper">
                 <ReactCSSTransitionGroup
                     transitionName="fade"
+                    transitionEnterTimeout={1500}
                     transitionAppear={true}
                     transitionAppearTimeout={1500}
                     transitionLeaveTimeout={1500}

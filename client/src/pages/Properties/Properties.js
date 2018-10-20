@@ -31,6 +31,7 @@ class Properties extends React.Component {
                 <ReactCSSTransitionGroup
                     transitionName="fade"
                     transitionAppear={true}
+                    transitionEnterTimeout={1500}
                     transitionAppearTimeout={1500}
                     transitionLeaveTimeout={1500}
                 >

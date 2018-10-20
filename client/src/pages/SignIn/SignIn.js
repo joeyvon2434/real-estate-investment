@@ -13,13 +13,13 @@ class SignIn extends React.Component {
     }
 
     render() {
-        console.log(this.props.auth);
         const { isAuthenticated } = this.props.auth;
 
         return (
             <div className="wrapper">
                 <ReactCSSTransitionGroup
                     transitionName="fade"
+                    transitionEnterTimeout={1500}
                     transitionAppear={true}
                     transitionAppearTimeout={1500}
                     transitionLeaveTimeout={1500}
