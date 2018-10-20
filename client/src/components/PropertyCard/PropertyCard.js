@@ -91,14 +91,14 @@ class PropertyCard extends React.Component {
     render() {
         return (
             <div className="propertyCard-wrapper">
-                <Container>
+                <Container className="property-container">
                     <Row className="justify-content-center">
                         <Col xs="12" sm="12" md="12" lg="5" >
                             <div className="image-container">
                                 <UncontrolledCarousel items={this.state.pictureArray} className="property-image" />
                             </div>
                         </Col>
-                        <Col xs="12" sm="12" md="12" lg="7">
+                        <Col xs="12" sm="12" md="12" lg="7" className="p-2">
                             <h2 className="property-title">{this.props.propertyName}</h2>
                             <div className="summary-text">{this.props.summary}</div>
                             <div className="bullet-text">Location: {this.props.location}</div>
