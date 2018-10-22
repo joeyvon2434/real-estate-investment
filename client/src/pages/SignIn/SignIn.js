@@ -28,7 +28,7 @@ class SignIn extends React.Component {
                     transitionAppearTimeout={1500}
                     transitionLeaveTimeout={1500}
                 >
-                    <h2 className="page-title">Sign In Page</h2>
+                    <h2 className="page-title">{!isAuthenticated() ? "Sign In" : "Sign Out"}</h2>
 
 
                     {!isAuthenticated() ? (
@@ -52,3 +52,5 @@ class SignIn extends React.Component {
 };
 
 export default SignIn;
+
+

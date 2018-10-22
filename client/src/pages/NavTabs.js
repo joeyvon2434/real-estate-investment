@@ -74,7 +74,7 @@ const NavTabs = (props) => {
             window.location.pathname === "/signin" ? "nav-link active" : "nav-link"
           }
         >
-          Sign In
+          {!isAuthenticated() ? "Sign In" : "Sign Out"}
       </Link>
       </li>
 
