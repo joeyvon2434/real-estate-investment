@@ -2,12 +2,16 @@ import React from "react";
 import "./SignIn.css";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
+//sign in screen
+
 class SignIn extends React.Component {
 
+    //log in method calls the Auth0 login API passed through props
     login() {
         this.props.auth.login();
     }
 
+    //log out method calls the Auth0 logout API passed through props
     logout() {
         this.props.auth.logout();
     }

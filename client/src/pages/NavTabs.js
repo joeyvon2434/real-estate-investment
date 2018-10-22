@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavTabs.css";
 
+//standard nav bar
+
 const NavTabs = (props) => {
 
   const { isAuthenticated } = props.auth;

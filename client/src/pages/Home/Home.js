@@ -2,6 +2,9 @@ import React from "react";
 import "./Home.css";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
+//home page
+
+
 class Home extends React.Component {
 
     render() {

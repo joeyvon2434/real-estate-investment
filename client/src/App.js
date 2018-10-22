@@ -20,9 +20,10 @@ import Auth from './Auth/Auth';
 import SecuredRoute from "./components/SecuredRoute";
 import history from "./history";
 
-
+//creating a new instance of the authentication Auth0 package for use in the app
 const auth = new Auth();
 
+//used to call Auth0 for authentication
 const handleAuthentication = (nextState, replace) => {
   if (/access_token|id_token|error/.test(nextState.location.hash)) {
     auth.handleAuthentication();

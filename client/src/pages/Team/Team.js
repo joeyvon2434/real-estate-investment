@@ -5,16 +5,20 @@ import { Container, Row, Col } from "reactstrap";
 import API from "../../utils/API";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
+//displays the team members
+
 class Team extends React.Component {
 
     state = {
         teamMembers: []
     }
 
+    //calls function that gets team info on initial load
     componentDidMount() {
         this.getAllTeamMembers();
     }
 
+    //function that gets the team members from the backend
     getAllTeamMembers = () => {
         console.log("Getting team members...");
         API.getAllTeamMembers()

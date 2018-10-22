@@ -2,6 +2,8 @@ import React from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 
+//404 not found page
+
 const NoMatch = () => (
   <Container fluid>
     <Row>

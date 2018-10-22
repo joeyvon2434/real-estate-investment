@@ -2,6 +2,8 @@ import React from "react";
 import "./Strategy.css";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
+//static page to display strategy
+
 class Strategy extends React.Component {
 
     render() {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
+//builds a secure route to use in the router allowing authentication checks with auth0
 
 function SecuredRoute(props) {
     console.log(props.location.pathname);

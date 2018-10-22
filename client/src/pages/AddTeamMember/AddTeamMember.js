@@ -4,6 +4,8 @@ import TeamInput from "../../components/TeamInput";
 import API from "../../utils/API";
 import ModalBox from "../../components/ModalBox";
 
+//component handles adding team members
+
 class AddTeamMember extends React.Component {
 
     state = {
@@ -13,6 +15,7 @@ class AddTeamMember extends React.Component {
         showCreateModal: false
     }
 
+    //creates team member
     handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
@@ -22,7 +25,7 @@ class AddTeamMember extends React.Component {
             summary: this.state.summary,
             picture: this.state.picture
         };
-
+        //calls to backend and submits the new team member
         API.createNewTeamMember(newMember)
         .then(res => {
             console.log("success");
@@ -30,7 +33,7 @@ class AddTeamMember extends React.Component {
     })
         .catch(err => console.log(err));
     }
-
+    
     handleInputChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;

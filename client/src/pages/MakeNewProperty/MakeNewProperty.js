@@ -4,6 +4,8 @@ import PropertyInput from "../../components/PropertyInput";
 import API from "../../utils/API";
 import ModalBox from "../../components/ModalBox";
 
+//Creates a new property on submit
+
 class MakeNewProperty extends React.Component {
 
     state = {
@@ -25,6 +27,7 @@ class MakeNewProperty extends React.Component {
         showCreateModal: false
     }
 
+    //creates the new property on submit
     handleFormSubmit = (event) => {
         event.preventDefault();
 

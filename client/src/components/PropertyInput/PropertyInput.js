@@ -1,6 +1,8 @@
 import React from "react";
 import "./PropertyInput.css";
 
+//Property input component. Acts as a "dumb" element
+
 class PropertyInput extends React.Component {
     render() {
         return(

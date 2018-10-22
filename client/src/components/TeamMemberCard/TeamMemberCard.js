@@ -1,12 +1,9 @@
 import React from "react";
 import "./TeamMemberCard.css";
 
-
+//organizes team member info
 
 class TeamMemberCard extends React.Component {
-
-
-
 
     render() {
         return (

@@ -4,6 +4,8 @@ import TeamInput from "../../components/TeamInput";
 import API from "../../utils/API";
 import ModalBox from "../../components/ModalBox";
 
+//displays update team member page
+
 class UpdateTeamMember extends React.Component {
 
     state = {
@@ -12,7 +14,7 @@ class UpdateTeamMember extends React.Component {
         showDeleteModal: false,
         showUpdateModal: false
     }
-
+    //gets all team members on initial page load
     componentDidMount() {
         this.getAllTeamMembers();
     }
@@ -26,7 +28,7 @@ class UpdateTeamMember extends React.Component {
     }
 }
 
-    //
+    //calls to API to get the team member data
     getAllTeamMembers = () => {
         API.getAllTeamMembers()
         .then(res => {

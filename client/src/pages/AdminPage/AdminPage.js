@@ -2,6 +2,7 @@ import React from "react";
 import "./AdminPage.css";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
+//serves as an admin page
 
 class AdminPage extends React.Component {
 

@@ -4,6 +4,9 @@ import API from "../../utils/API";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import ErrorModalBox from "../../components/ErrorModalBox";
 
+
+//creates the contact / invest page and handles the emails
+
 class Contact extends React.Component {
 
     state = {

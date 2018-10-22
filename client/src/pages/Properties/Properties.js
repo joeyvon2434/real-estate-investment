@@ -4,6 +4,7 @@ import PropertyCard from "../../components/PropertyCard";
 import API from "../../utils/API";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
+//displays the properties from the database
 
 class Properties extends React.Component {
 
@@ -15,6 +16,7 @@ class Properties extends React.Component {
         this.getAllProperties();
     }
 
+    //calls the backend and receives the property info
     getAllProperties = () => {
         API.getAllProperties()
             .then(res => {

@@ -1,6 +1,8 @@
 import React from "react";
 import "./TeamInput.css";
 
+//"Dumb" component for input of team member info.
+
 class TeamInput extends React.Component {
     render() {
         return(

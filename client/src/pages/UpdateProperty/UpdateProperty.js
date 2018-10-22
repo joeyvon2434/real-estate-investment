@@ -4,6 +4,7 @@ import PropertyInput from "../../components/PropertyInput";
 import API from "../../utils/API";
 import ModalBox from "../../components/ModalBox";
 
+//update property page
 
 class UpdateProperty extends React.Component {
 
@@ -14,6 +15,7 @@ class UpdateProperty extends React.Component {
         showUpdateModal: false
     }
 
+    //get property info on page load
     componentDidMount() {
         this.getAllProperties();
     }
