@@ -9,8 +9,9 @@ const NavTabs = (props) => {
   const { isAuthenticated } = props.auth;
 
   return (
-
+    
     <ul className="nav nav-tabs nav-elements">
+      
       <li className="nav-item">
         <Link
           to="/"
@@ -90,6 +91,7 @@ const NavTabs = (props) => {
 
 
     </ul>
+    
   )
 };
 
