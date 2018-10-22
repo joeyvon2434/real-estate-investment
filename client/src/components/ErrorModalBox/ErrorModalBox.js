@@ -1,6 +1,8 @@
 import React from "react";
 import "./ErrorModalBox.css";
-// import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
+//Create an error modal with a button to exit the modal
+//This modal accepts a function and 3 text fields as inputs from props
 
 
 class ModalBox extends React.Component {

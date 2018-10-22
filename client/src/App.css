@@ -22,6 +22,7 @@
 .page-title {
   margin-top: 2%;
   color: white;
+  font-size: 25px;
   text-shadow:
 		-1px -1px 0 black,
 		1px -1px 0 black,
@@ -57,7 +58,7 @@ button:hover {
 .gray-transparent-background {
   box-shadow: 0 2px 3px rgb(56, 56, 56);
   background: rgb(100, 100, 100);
-  background: rgba(56, 56, 56, 0.7);
+  background: rgba(56, 56, 56, 0.9);
 }
 
 .fade-appear {
@@ -76,6 +77,15 @@ button:hover {
 .fade-leave-active {
   opacity: 0;
   transition: opacity 1500ms ease-out;
+}
+
+
+@media only screen and (max-width: 768px) {
+  
+  .wrapper {
+    width: 90%;
+  }
+  
 }
 
 

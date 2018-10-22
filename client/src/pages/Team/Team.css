@@ -4,6 +4,7 @@
     background: rgb(255, 255, 255, 0.9);
     color: black;
     box-shadow: 0 2px 3px rgb(56, 56, 56);
+    border-radius: 4px;
 }
 
 /* .gray-transparent-background {

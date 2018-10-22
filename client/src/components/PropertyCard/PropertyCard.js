@@ -3,12 +3,14 @@ import "./PropertyCard.css";
 import { Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 
+//This card displays the properties in the database
+
 class PropertyCard extends React.Component {
 
     state = {
         pictureArray: []
     }
-
+    //populate the state from the databse when the card mounts
     componentDidMount() {
         this.makePictureArray();
     }
@@ -16,7 +18,6 @@ class PropertyCard extends React.Component {
     makePictureArray = () => {
         const property = this.props;
         const pictureArray = [];
-        //pic1 is already loaded
         if (property.pic1 !== "") {
             pictureArray.push(
                 {
@@ -67,14 +68,13 @@ class PropertyCard extends React.Component {
                 }
             );
         };
-
         this.setState({
             pictureArray: pictureArray
         });
     }
 
 
-
+    //CHeck if the property is sold or current and display the necessary info
     displaySold = () => {
         if (this.props.propertySold) {
             return (

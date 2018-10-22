@@ -2,20 +2,39 @@
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    padding: 15px;
+    box-shadow: 0 2px 3px rgb(56, 56, 56);
+    background: rgb(100, 100, 100);
+    background: rgba(56, 56, 56, 0.9);
 }
 
 .input-label {
+    display: block;
+    width: 90%;
     text-shadow: 0 0 1px black;
-    font-size: 1.5em;
+    font-size: 1em;
+    
+    margin: 0 auto;
 }
 
 .input-field {
+    display: block;
     width: 90%;
     background: rgb(187, 207, 226);
     box-shadow: 0 2px 3px rgb(56, 56, 56);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    border: 1px solid black;
 }
 
 .text-field {
     height: 8em;
     margin-bottom: 15px;
 }
+
+.send-button {
+    display: block;
+    margin: 0 auto;
+}
+

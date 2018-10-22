@@ -1,5 +1,5 @@
 .main-title {
-  font-size: 50px;
+  font-size: 40px;
   text-shadow: 0 0 3px black;
 }
 
@@ -19,4 +19,20 @@
 
 .quote-author {
   font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .main-title {
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .quote {
+      position: relative;
+      display: block;
+      right: 0;
+      width: 90%;
+      margin: 5% auto;
+    }
 }

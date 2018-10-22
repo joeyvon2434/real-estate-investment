@@ -2,13 +2,8 @@ import React from "react";
 import "./Callback.css";
 
 
+//provides a route for Auth0 to return to after authentication attempts before redirecting to default pages
 class Callback extends React.Component {
-
-    // async componentDidMount() {
-    //     await this.props.auth.handleAuthentication();
-    //     this.props.history.replace('/');
-    // }
-
 
     render() {
 

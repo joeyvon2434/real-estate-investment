@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 
+//It's a footer... it kind of explains itself
 
 class Footer extends React.Component {
 

@@ -1,7 +1,8 @@
 import React from "react";
 import "./ModalBox.css";
-// import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+//Modal with a confirm and cancel.
+//Thi modal accepts a confirm and cancel function, as well as the 3 needed text components.
 
 class ModalBox extends React.Component {
 

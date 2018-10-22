@@ -13,7 +13,7 @@ class TeamMemberCard extends React.Component {
             <div>
                     <div className="TeamMemberCard-wrapper">
                         <img src={this.props.picture} alt="team member" className="team-member-image"></img>
-                        <h3>{this.props.memberName}</h3>
+                        <h3 className="member-name">{this.props.memberName}</h3>
                         <p>{this.props.summary}</p>
                     </div>
             </div>

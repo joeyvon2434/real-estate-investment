@@ -60,7 +60,7 @@ const NavTabs = (props) => {
             window.location.pathname === "/contact" ? "nav-link active" : "nav-link"
           }
         >
-          Contact
+          Invest
       </Link>
       </li>
 
