@@ -3,6 +3,7 @@ import "./AddTeamMember.css";
 import TeamInput from "../../components/TeamInput";
 import API from "../../utils/API";
 import ModalBox from "../../components/ModalBox";
+import ErrorModalBox from "../../components/ErrorModalBox";
 
 //component handles adding team members
 
@@ -12,13 +13,13 @@ class AddTeamMember extends React.Component {
         name: "",
         summary: "",
         picture: "",
-        showCreateModal: false
+        showCreateModal: false,
+        showErrorModal: false
     }
 
     //creates team member
     handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
 
         const newMember = {
             name: this.state.name,
@@ -45,9 +46,23 @@ class AddTeamMember extends React.Component {
     //Create Property confirm using a created modal
     createModalToggle = (event) => {
         event.preventDefault();
+
+        if (this.state.name === "" || this.state.summary === "" || this.state.picture === "") {
+            console.log('fails validation');
+            return this.errorModalToggle();
+        }
+
         const newToggle = !this.state.showCreateModal;
         this.setState({
             showCreateModal: newToggle
+        });
+    }
+
+    //Modal to confirm correct fields are filled out
+    errorModalToggle = () => {
+        const newToggle = !this.state.showErrorModal;
+        this.setState({
+            showErrorModal: newToggle
         });
     }
 
@@ -58,8 +73,14 @@ class AddTeamMember extends React.Component {
                     cancelFunction={this.createModalToggle}
                     confirmFunction={this.handleFormSubmit}
                     modalText={`Are you sure you want to create ${this.state.name}?`}
-                    modalHeadText={`Creating Property!`}
+                    modalHeadText={`Creating Team Member!`}
                     confirmText={`Create: ${this.state.name}`}
+                />) : ""}
+            {this.state.showErrorModal ? (<ErrorModalBox
+                    cancelFunction={this.errorModalToggle}
+                    modalText={`All fields are required prior to submission`}
+                    modalHeadText={`Error: Missing Required Fields!`}
+                    confirmText={`Cancel`}
                 />) : ""}
                 <h2 className="page-title">Add a New Team Member</h2>
                 <TeamInput

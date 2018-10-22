@@ -3,6 +3,7 @@ import "./MakeNewProperty.css";
 import PropertyInput from "../../components/PropertyInput";
 import API from "../../utils/API";
 import ModalBox from "../../components/ModalBox";
+import ErrorModalBox from "../../components/ErrorModalBox";
 
 //Creates a new property on submit
 
@@ -18,13 +19,14 @@ class MakeNewProperty extends React.Component {
         returnOnEquity: 0,
         internalRateOfReturn: 0,
         disposition: "",
-        propertySold: true,
+        propertySold: null,
         pic1: "",
         pic2: "",
         pic3: "",
         pic4: "",
         pic5: "",
-        showCreateModal: false
+        showCreateModal: false,
+        showErrorModal: false
     }
 
     //creates the new property on submit
@@ -70,9 +72,23 @@ class MakeNewProperty extends React.Component {
     //Create Property confirm using a created modal
     createModalToggle = (event) => {
         event.preventDefault();
+
+        if (this.state.propertyName === "" || this.state.propertySold === null) {
+            console.log('fails validation');
+            return this.errorModalToggle();
+        }
+        
         const newToggle = !this.state.showCreateModal;
         this.setState({
             showCreateModal: newToggle
+        });
+    }
+
+    //Modal to confirm correct fields are filled out
+    errorModalToggle = () => {
+        const newToggle = !this.state.showErrorModal;
+        this.setState({
+            showErrorModal: newToggle
         });
     }
 
@@ -85,6 +101,12 @@ class MakeNewProperty extends React.Component {
                     modalText={`Are you sure you want to create ${this.state.propertyName}?`}
                     modalHeadText={`Creating Property!`}
                     confirmText={`Create: ${this.state.propertyName}`}
+                />) : ""}
+                {this.state.showErrorModal ? (<ErrorModalBox
+                    cancelFunction={this.errorModalToggle}
+                    modalText={`The following fields are required for submission: "Property Name", "Sold or Current"`}
+                    modalHeadText={`Error: Missing Required Fields!`}
+                    confirmText={`Cancel`}
                 />) : ""}
                 <h2 className="page-title">Create a New Property</h2>
                 <PropertyInput
