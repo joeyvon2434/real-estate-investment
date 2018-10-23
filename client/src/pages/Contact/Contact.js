@@ -99,11 +99,11 @@ class Contact extends React.Component {
                         <p className="input-label">We are seeking investors, and brokers to work with for mutual profit. If our investment strategy matches with your philosophy, please feel free to contact us with the form below.</p>
                         <br></br>
                         <label className="input-label">Email Address</label>
-                        <input onChange={this.handleInputChange} type="text" name="emailAddress" className="input-field"></input>
+                        <input onChange={this.handleInputChange} type="text" name="emailAddress" className="input-field short-field"></input>
                         <label className="input-label">Name</label>
-                        <input onChange={this.handleInputChange} type="text" name="name" className="input-field"></input>
+                        <input onChange={this.handleInputChange} type="text" name="name" className="input-field short-field"></input>
                         <label className="input-label">Phone</label>
-                        <input onChange={this.handleInputChange} type="text" name="phone" className="input-field"></input>
+                        <input onChange={this.handleInputChange} type="text" name="phone" className="input-field short-field"></input>
                         <label className="input-label">Message</label>
                         <textarea onChange={this.handleInputChange} type="text" name="message" className="input-field text-field"></textarea>
                         <button
