@@ -1,0 +1,13 @@
+#team-form {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px;
+    box-shadow: 0 2px 3px rgb(56, 56, 56);
+    background: rgb(100, 100, 100);
+    background: rgba(56, 56, 56, 0.9);
+    border-radius: 2px;
+}
+
+.short-field {
+    width: 40%;
+}

@@ -8,6 +8,7 @@
     background: rgba(56, 56, 56, 0.9);
     padding-top: 10px;
     padding-bottom: 10px;
+    border-radius: 2px;
 }
 
 .admin-container ul {
@@ -21,6 +22,7 @@
     padding: 3px;
     margin-bottom: 5px;
     border: 1px solid rgb(146, 146, 146);
+    border-radius: 2px;
 }
 
 .list-item-name {

@@ -16,11 +16,11 @@ class PropertyInput extends React.Component {
                 <form id="property-form">
                     <div className="form-group">
                         <label>Property Name (* required *)</label>
-                        <input type="text" className="form-control" name="propertyName" placeholder={this.props.propertyName} onChange={this.props.handleInputChange} />
+                        <input type="text" className="form-control short-field" name="propertyName" placeholder={this.props.propertyName} onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Sold or Current Property (* required *)</label>
-                        <select className="form-control" name="propertySold" onChange={this.props.handleInputChange}>
+                        <select className="form-control very-short-field" name="propertySold" onChange={this.props.handleInputChange}>
                             <option value="">Please Select</option>
                             <option value="true">Sold</option>
                             <option value="false">Current</option>
@@ -28,23 +28,23 @@ class PropertyInput extends React.Component {
                     </div>
                     <div className="form-group">
                         <label>Property Summary</label>
-                        <input type="text" className="form-control" name="summary" placeholder={this.props.summary} onChange={this.props.handleInputChange} />
+                        <textarea type="text" className="form-control" name="summary" placeholder={this.props.summary} onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Property Style</label>
-                        <input type="text" className="form-control" name="propertyType" placeholder="Property Type: eg. multi-family" onChange={this.props.handleInputChange} />
+                        <input type="text" className="form-control short-field" name="propertyType" placeholder="Property Type: eg. multi-family" onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Year Built</label>
-                        <input type="number" className="form-control" name="yearBuilt" placeholder={this.props.yearBuilt} onChange={this.props.handleInputChange} />
+                        <input type="number" className="form-control very-short-field" name="yearBuilt" placeholder={this.props.yearBuilt} onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Strategy</label>
-                        <input type="text" className="form-control" name="strategy" placeholder={this.props.strategy} onChange={this.props.handleInputChange} />
+                        <input type="text" className="form-control short-field" name="strategy" placeholder={this.props.strategy} onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Location</label>
-                        <input type="text" className="form-control" name="location" placeholder={this.props.location} onChange={this.props.handleInputChange} />
+                        <input type="text" className="form-control short field" name="location" placeholder={this.props.location} onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Return on Equity - rentals only (enter as a percent with no percent sign)</label>
@@ -52,11 +52,11 @@ class PropertyInput extends React.Component {
                     </div>
                     <div className="form-group">
                         <label>Internal Rate of Return - sold properties only (enter as a percent with no percent sign)</label>
-                        <input type="number" className="form-control" name="internalRateOfReturn" placeholder={this.props.internalRateOfReturn} onChange={this.props.handleInputChange} />
+                        <input type="number" className="form-control very-short-field" name="internalRateOfReturn" placeholder={this.props.internalRateOfReturn} onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Disposition - sold properties only</label>
-                        <input type="text" className="form-control" name="disposition" placeholder={this.props.disposition} onChange={this.props.handleInputChange} />
+                        <input type="text" className="form-control short-field" name="disposition" placeholder={this.props.disposition} onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Property pictures</label>
