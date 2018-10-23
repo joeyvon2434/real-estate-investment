@@ -50,9 +50,9 @@ class App extends React.Component {
               <Route exact path="/signin" render={() => <SignIn auth={auth} />} />
               <SecuredRoute exact path="/admin" component={AdminPage} auth={auth} />
               <SecuredRoute exact path="/admin/make-new-property" component={MakeNewProperty} auth={auth} />
-              <SecuredRoute exact path="/admin/update-property/:id" component={UpdateProperty} auth={auth} />
+              {/* <SecuredRoute exact path="/admin/update-property/:id" component={UpdateProperty} auth={auth} /> */}
               <SecuredRoute exact path="/admin/add-a-team-member" component={AddTeamMember} auth={auth} />
-              <SecuredRoute exact path="/admin/update-team-member/:id" component={UpdateTeamMember} auth={auth} />
+              {/* <SecuredRoute exact path="/admin/update-team-member/:id" component={UpdateTeamMember} auth={auth} /> */}
               <Route exact path="/callback" render={(props) => {
                 handleAuthentication(props);
                 return <Callback {...props} auth={auth} />
