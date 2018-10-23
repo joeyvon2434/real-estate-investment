@@ -28,7 +28,7 @@ class TeamInput extends React.Component {
                     </div>
         
                     <button className="btn mr-3" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
-                    <button className="btn" onClick={this.props.cancelFunction}>Cancel</button>
+                    <button className="btn" onClick={this.cancelFunction}>Cancel</button>
                 </form>
             </div>
         )

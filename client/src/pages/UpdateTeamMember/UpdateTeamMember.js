@@ -56,6 +56,11 @@ class UpdateTeamMember extends React.Component {
         .catch(err => console.log(err));
     }
 
+     //close update property screen
+     closeUpdateTeam = () => {
+        window.location.replace("/admin");
+    }
+
     //Update team member confirm modal
     updateModalToggle = (event) => {
         event.preventDefault();
@@ -76,7 +81,12 @@ class UpdateTeamMember extends React.Component {
                                                 modalHeadText={`Update Team Member!`}
                                                 confirmText={`Update: ${this.state.currentMember.name}`}
                                             />) : ""}
-                <h2 className="page-title">Update Team Member: {this.state.currentMember.name}</h2>
+                <h2 
+                    className="page-title">Update Team Member: {this.state.currentMember.name}
+                            <i 
+                            onClick={this.closeUpdateTeam}
+                            className="fas fa-times close-top-right"></i>
+                </h2>
                 <TeamInput
                     name={this.state.currentMember.name}
                     summary={this.state.currentMember.summary}

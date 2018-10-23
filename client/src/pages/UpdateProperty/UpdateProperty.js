@@ -56,6 +56,11 @@ class UpdateProperty extends React.Component {
             .catch(err => console.log(err));
     }
 
+    //close update property screen
+    closeUpdateProperty = () => {
+        window.location.replace("/admin");
+    }
+
 
     //update team member confirm using
     updateModalToggle = (event) => {
@@ -71,6 +76,7 @@ class UpdateProperty extends React.Component {
         return (
             <div className="update-property-wrapper">
                 <div className="wrapper inner-property-wrapper">
+                
                     {this.state.showUpdateModal ? (<ModalBox
                         cancelFunction={this.updateModalToggle}
                         confirmFunction={this.updateProperty}
@@ -78,7 +84,13 @@ class UpdateProperty extends React.Component {
                         modalHeadText={`Update Property!`}
                         confirmText={`Update: ${this.state.currentProperty.propertyName}`}
                     />) : ""}
-                    <h2 className="page-title">Update Property: {this.state.currentProperty.propertyName}</h2>
+                    <h2 
+                        className="page-title"
+                        >Update Property: {this.state.currentProperty.propertyName}
+                            <i 
+                            onClick={this.closeUpdateProperty}
+                            className="fas fa-times close-top-right"></i>
+                    </h2>
 
                     <PropertyInput
                         propertyId={this.state.currentProperty._id}

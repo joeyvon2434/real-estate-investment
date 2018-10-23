@@ -206,7 +206,7 @@ updatePropertyToggle = () => {
                                         {this.state.propertiesArray.map(property => (
                                             <li
                                             key={property._id}
-                                            >{property.propertyName}
+                                            ><div className="list-item-name">{property.propertyName}</div>
                                                 <button 
                                                     value={property._id}
                                                     onClick={this.handleUpdatePropertyClick}
@@ -235,7 +235,7 @@ updatePropertyToggle = () => {
                                         {this.state.teamMemberArray.map(member => (
                                             <li
                                                 key={member._id}
-                                            >{member.name}
+                                            ><div className="list-item-name">{member.name}</div>
                                                 <button 
                                                     onClick={this.handleUpdateTeamMemberClick}
                                                     className="btn edit-button"
