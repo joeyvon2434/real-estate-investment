@@ -106,7 +106,7 @@ class PropertyCard extends React.Component {
                             <div className="bullet-text">Year Built: {this.props.yearBuilt}</div>
                             <div className="bullet-text">Strategy: {this.props.strategy}</div>
                             {this.displaySold()}
-
+                            <div className="bullet-text">Interested investors <a href="/contact">click here.</a> </div>
                         </Col>
                     </Row>
                 </Container>

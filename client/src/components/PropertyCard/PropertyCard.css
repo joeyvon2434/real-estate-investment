@@ -41,6 +41,10 @@
     /* border: 1px solid black; */
 }
 
+.bullet-text a {
+    color: red;
+}
+
 .summary-text {
     width: 80%;
     font-size: 14px;

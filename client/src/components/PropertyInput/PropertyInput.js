@@ -4,6 +4,12 @@ import "./PropertyInput.css";
 //Property input component. Acts as a "dumb" element
 
 class PropertyInput extends React.Component {
+
+    cancelFunction = (event) => {
+        event.preventDefault();
+        window.location.replace("/admin");
+    }
+
     render() {
         return(
             <div>
@@ -72,8 +78,8 @@ class PropertyInput extends React.Component {
                         <input type="text" className="form-control" name="pic5" placeholder={this.props.pic5} onChange={this.props.handleInputChange} />
                     </div>
         
-                    <button className="btn" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
-                
+                    <button className="btn mr-3" onClick={this.props.handleFormSubmit}>{this.props.buttonLabel}</button>
+                    <button className="btn" onClick={this.props.cancelFunction}>Cancel</button>
                 </form>
             </div>
         )
