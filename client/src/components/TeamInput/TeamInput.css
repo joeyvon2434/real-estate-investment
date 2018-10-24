@@ -11,3 +11,8 @@
 .short-field {
     width: 40%;
 }
+
+.highlight-required {
+    box-shadow: 0 0 10px red;
+    border: 1px solid red;
+}

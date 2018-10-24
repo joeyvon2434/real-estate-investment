@@ -11,16 +11,26 @@ class PropertyInput extends React.Component {
     }
 
     render() {
+        console.log("here");
+        console.log(this.props.highlightRequiredFields);
         return(
             <div>
                 <form id="property-form">
                     <div className="form-group">
                         <label>Property Name (* required *)</label>
-                        <input type="text" className="form-control short-field" name="propertyName" placeholder={this.props.propertyName} onChange={this.props.handleInputChange} />
+                        <input 
+                            type="text" 
+                            className={this.props.highlightRequiredFields ? "highlight-required form-control short-field" : "form-control short-field"}
+                            name="propertyName" 
+                            placeholder={this.props.propertyName} 
+                            onChange={this.props.handleInputChange} />
                     </div>
                     <div className="form-group">
                         <label>Sold or Current Property (* required *)</label>
-                        <select className="form-control very-short-field" name="propertySold" onChange={this.props.handleInputChange}>
+                        <select 
+                        className={this.props.highlightRequiredFields ? "highlight-required form-control very-short-field" : "form-control very-short-field"} 
+                        name="propertySold" 
+                        onChange={this.props.handleInputChange}>
                             <option value="">Please Select</option>
                             <option value="true">Sold</option>
                             <option value="false">Current</option>

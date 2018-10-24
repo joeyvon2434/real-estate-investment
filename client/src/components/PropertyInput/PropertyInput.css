@@ -16,3 +16,8 @@
 .very-short-field {
     width: 20%;
 }
+
+.highlight-required {
+    box-shadow: 0 0 10px red;
+    border: 1px solid red;
+}

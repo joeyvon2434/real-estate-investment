@@ -26,7 +26,8 @@ class MakeNewProperty extends React.Component {
         pic4: "",
         pic5: "",
         showCreateModal: false,
-        showErrorModal: false
+        showErrorModal: false,
+        highlightRequiredFields: false
     }
 
     //creates the new property on submit
@@ -88,7 +89,8 @@ class MakeNewProperty extends React.Component {
     errorModalToggle = () => {
         const newToggle = !this.state.showErrorModal;
         this.setState({
-            showErrorModal: newToggle
+            showErrorModal: newToggle,
+            highlightRequiredFields: true
         });
     }
 
@@ -127,6 +129,7 @@ class MakeNewProperty extends React.Component {
                     pic5={"pic5"}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.createModalToggle}
+                    highlightRequiredFields={this.state.highlightRequiredFields}
                 />
             </div>
         )

@@ -14,7 +14,8 @@ class AddTeamMember extends React.Component {
         summary: "",
         picture: "",
         showCreateModal: false,
-        showErrorModal: false
+        showErrorModal: false,
+        highlightRequiredFields: false
     }
 
     //creates team member
@@ -62,7 +63,8 @@ class AddTeamMember extends React.Component {
     errorModalToggle = () => {
         const newToggle = !this.state.showErrorModal;
         this.setState({
-            showErrorModal: newToggle
+            showErrorModal: newToggle,
+            highlightRequiredFields: true
         });
     }
 
@@ -89,6 +91,7 @@ class AddTeamMember extends React.Component {
                     buttonLabel={"Add New Team Member"}
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.createModalToggle}
+                    highlightRequiredFields={this.state.highlightRequiredFields}
                 />
             </div>
         )
