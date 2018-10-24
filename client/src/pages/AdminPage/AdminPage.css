@@ -1,5 +1,14 @@
 .admin-titles {
     text-align: center;
+    text-shadow: 
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+.admin-row {
+    overflow: scroll;
 }
 
 .admin-container {
@@ -60,3 +69,20 @@
     background: red;
     box-shadow: 0 0 5px rgb(255, 57, 57);
 }
+
+
+@media only screen and (max-width: 768px) {
+  
+    .edit-button, .dlt-button, .add-button {
+        margin-left: 3px;
+        margin-right: 3px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 12;
+    }
+
+    .edit-button {
+        margin-bottom: 5px;
+    }
+    
+  }

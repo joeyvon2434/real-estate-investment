@@ -193,7 +193,7 @@ updatePropertyToggle = () => {
                 >
                     <h2 className="page-title">Admin Page</h2>
                     <Container fluid>
-                        <Row className="equal justify-content-center">
+                        <Row className="equal justify-content-center admin-row">
 
                             <Col md="5" sm="8">
                                 <h4 className="admin-titles">Properties</h4>

@@ -1,5 +1,10 @@
 a {
     color: white;
+    text-shadow: 
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 @media only screen and (max-width: 768px) {
@@ -9,7 +14,11 @@ a {
         font-weight: bold;
         padding: 5px 8px;
         color: black;
-        text-shadow: 0 0 2px white;
+        text-shadow: 
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
     }
     
   }
@@ -21,7 +30,11 @@ a {
         font-weight: bold;
         padding: 4px 5px;
         color: black;
-        text-shadow: 0 0 2px white;
+        text-shadow: 
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
     }
     
   }

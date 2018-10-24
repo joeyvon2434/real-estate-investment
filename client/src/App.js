@@ -39,6 +39,7 @@ class App extends React.Component {
       <Router history={history}>
 
         <div className="total-wrapper">
+        
           <div className="scroll-wrapper">
             <NavTabs auth={auth} />
             <Switch>
