@@ -5,10 +5,36 @@ import "./TeamInput.css";
 
 class TeamInput extends React.Component {
 
+
     cancelFunction = (event) => {
         event.preventDefault();
         window.location.replace("/admin");
     }
+
+    checkNameField= () => {
+        if (this.props.highlightRequiredFields && this.props.nameField === "") {
+            return "highlight-required form-control short-field";
+        } else {
+            return "form-control short-field";
+        }
+    }
+
+    checkSummaryField= () => {
+        if (this.props.highlightRequiredFields && this.props.summaryField === "") {
+            return "highlight-required form-control";
+        } else {
+            return "form-control";
+        }
+    }
+
+    checkPictureField= () => {
+        if (this.props.highlightRequiredFields && this.props.pictureField === "") {
+            return "highlight-required form-control";
+        } else {
+            return "form-control";
+        }
+    }
+
 
     render() {
         return(
@@ -18,7 +44,7 @@ class TeamInput extends React.Component {
                         <label>Name (* required *)</label>
                         <input 
                             type="text" 
-                            className={this.props.highlightRequiredFields ? "highlight-required form-control short-field" : "form-control short-field"}
+                            className={this.checkNameField()}
                             name="name" placeholder={this.props.name} 
                             onChange={this.props.handleInputChange} />
                     </div>
@@ -26,7 +52,7 @@ class TeamInput extends React.Component {
                         <label>Summary (* required *)</label>
                         <textarea 
                             type="text" 
-                            className={this.props.highlightRequiredFields ? "highlight-required form-control" : "form-control"}
+                            className={this.checkSummaryField()}
                             name="summary" 
                             placeholder={this.props.summary} 
                             onChange={this.props.handleInputChange} />
@@ -35,7 +61,7 @@ class TeamInput extends React.Component {
                         <label>Picture (* required *)</label>
                         <input 
                             type="text" 
-                            className={this.props.highlightRequiredFields ? "highlight-required form-control short-field" : "form-control short-field"}
+                            className={this.checkPictureField()}
                             name="picture"
                             placeholder={this.props.picture} 
                             onChange={this.props.handleInputChange} />

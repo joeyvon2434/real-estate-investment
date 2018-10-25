@@ -130,6 +130,8 @@ class MakeNewProperty extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.createModalToggle}
                     highlightRequiredFields={this.state.highlightRequiredFields}
+                    nameField={this.state.propertyName}
+                    soldField={this.state.propertySold}
                 />
             </div>
         )

@@ -92,6 +92,9 @@ class AddTeamMember extends React.Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.createModalToggle}
                     highlightRequiredFields={this.state.highlightRequiredFields}
+                    nameField={this.state.name}
+                    summaryField={this.state.summary}
+                    pictureField={this.state.picture}
                 />
             </div>
         )
