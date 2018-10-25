@@ -15,7 +15,8 @@ class Contact extends React.Component {
         phone: "",
         message: "",
         showErrorModal: false,
-        showConfirmModal: false
+        showConfirmModal: false,
+        highlightRequiredFields: false
     }
 
     
@@ -50,11 +51,12 @@ class Contact extends React.Component {
     errorModalToggle = () => {
         const newToggle = !this.state.showErrorModal;
         this.setState({
-            showErrorModal: newToggle
+            showErrorModal: newToggle,
+            highlightRequiredFields: true
         });
     }
 
-      //Modal to confirm correct fields are filled out
+      //Modal to confirm submission went through
       confirmModalToggle = () => {
         const newToggle = !this.state.showConfirmModal;
         this.setState({
@@ -68,6 +70,22 @@ class Contact extends React.Component {
     //redirect to home function
     sendToHomeWindow = () => {
         window.location.replace("/");
+    }
+
+    checkNameField = () => {
+        if(this.state.highlightRequiredFields && this.state.name === "") {
+            return "input-field short-field highlight-required";
+        } else {
+            return "input-field short-field";
+        }
+    }
+
+    checkEmailField = () => {
+        if(this.state.highlightRequiredFields && this.state.emailAddress === "") {
+            return "input-field short-field highlight-required";
+        } else {
+            return "input-field short-field";
+        }
     }
 
     render() {
@@ -98,10 +116,10 @@ class Contact extends React.Component {
                     <form className="contact-form gray-transparent-background">
                         <p className="input-label">We are seeking investors, and brokers to work with for mutual profit. If our investment strategy matches with your philosophy, please feel free to contact us with the form below.</p>
                         <br></br>
-                        <label className="input-label">Email Address</label>
-                        <input onChange={this.handleInputChange} type="text" name="emailAddress" className="input-field short-field"></input>
-                        <label className="input-label">Name</label>
-                        <input onChange={this.handleInputChange} type="text" name="name" className="input-field short-field"></input>
+                        <label className="input-label">Email Address (* required *)</label>
+                        <input onChange={this.handleInputChange} type="text" name="emailAddress" className={this.checkEmailField()}></input>
+                        <label className="input-label">Name (* required *)</label>
+                        <input onChange={this.handleInputChange} type="text" name="name" className={this.checkNameField()}></input>
                         <label className="input-label">Phone</label>
                         <input onChange={this.handleInputChange} type="text" name="phone" className="input-field short-field"></input>
                         <label className="input-label">Message</label>
