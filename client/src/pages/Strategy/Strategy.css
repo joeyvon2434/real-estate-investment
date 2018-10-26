@@ -23,7 +23,8 @@
 }
 
 .strategy-chart {
-    width: 50%;
+    width: 600px;
+    height: 371px;
     margin: 10px auto;
     border-radius: 2px;
 }

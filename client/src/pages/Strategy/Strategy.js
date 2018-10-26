@@ -31,7 +31,7 @@ class Strategy extends React.Component {
                         </ul>
 
                         <h4 className="article-title">Correlation of Population Growth and Median Sales Price</h4>
-                        <img className="strategy-chart" src="chart-pic.png" alt="a chart"></img>
+                        <iframe className="strategy-chart" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSKI1s9XhVdDCcKNkPR6vJMeh_7Wvf0_uG06omFtxvVIYh_U6_ZOAgQa-GHBnxQ-ddogdpw6hYDJETz/pubchart?oid=555290815&amp;format=interactive"></iframe>
                         <p>Population by metropolitan statistical area (MSA) was looked at over the period starting from 2010 through 2017. The compound annual growth rate (CAGR) over this period was calculated as it provided enough data points since the 2008 mortgage crisis to create a meaningful trend. This yielded a less volatile CAGR over the eight year period, compared to taking the latest one-year change in growth. Further analysis of yearly population by MSA showed that the main drivers of growth were tied to job opportunities.</p>
                         <p>2017 median sales price data of residential single family homes by MSA was gathered to plot against the population CAGR: 2010-17.</p>
                         <p>The resulting chart indicates a strong positive correlation between the population growth (2010-17) and the 2017 median sales price. This means that one would expect a cheaper sales price in a given MSA if the population growth has been negative and a higher sales price in a given MSA if the population growth has been positive.</p>
