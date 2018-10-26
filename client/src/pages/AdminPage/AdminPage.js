@@ -201,7 +201,7 @@ updatePropertyToggle = () => {
                                 <button
                                     onClick={this.handleAddPropertyClick}
                                     className="btn add-button"
-                                    >Add Property +</button>
+                                    ><i className="fas fa-plus"></i> Add Property</button>
                                     <ul>
                                         {this.state.propertiesArray.map(property => (
                                             <li
@@ -230,7 +230,7 @@ updatePropertyToggle = () => {
                                 <button 
                                     onClick={this.handleAddTeamMemberClick}
                                     className="btn add-button"
-                                    >Add Team Member +</button>
+                                    ><i className="fas fa-plus"></i> Add Team Member</button>
                                     <ul>
                                         {this.state.teamMemberArray.map(member => (
                                             <li
