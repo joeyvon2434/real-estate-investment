@@ -7,7 +7,7 @@
     background: white;
     /* background:linear-gradient(rgb(20, 27, 65, 0.6), rgba(4, 6, 19, 0.95), rgb(20, 27, 65, 0.6)); */
     /* background:linear-gradient(rgba(153, 153, 153, 0.9), rgba(4, 6, 19, 0.90), rgb(128, 128, 128, 0.7)); */
-    background: rgb(255, 255, 255, 0.9);
+    background: rgba(204, 204, 204, 0.85);
     /* text-shadow: 0 0 1px black; */
     box-shadow: 0 2px 3px rgb(29, 29, 29);
     color: black;

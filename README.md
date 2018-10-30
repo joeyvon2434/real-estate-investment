@@ -43,7 +43,7 @@ The site was built to be easy and intuitive to use. Start on the homepage and cl
 
 
 ## Technologies:   
-                React
+                React / Reactstrap
                 HTML5 / CSS / Javascript
                 Node.js / Express
                 NodeMailer / SendGrid
